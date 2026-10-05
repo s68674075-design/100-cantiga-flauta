@@ -56,7 +56,7 @@ function Gallery({ names, onPreview, label }: { names: string[]; onPreview: (url
   const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
   return <div className="gallery" aria-label={label}>
     <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
-      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => onPreview(materialAssets[name])}><img loading="lazy" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
+      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;
@@ -108,7 +108,7 @@ function Index() {
         ['cerebroicon', 'Cifras melódicas simples', 'Os nomes das notas aparecem na sequência da melodia para facilitar a prática de quem ainda está começando.'],
         ['papelicon', 'Dedilhados e notas coloridas', 'Os desenhos mostram quais furos cobrir, enquanto as cores ajudam a relacionar cada nota à partitura.'],
         ['phoneicon', 'Acesso 100% digital', 'Receba os PDFs, use no celular ou tablet e imprima as páginas para praticar em casa ou nas aulas.'],
-      ].map(([image, title, text]) => <div className="method-item" key={title}><img loading="lazy" src={asset(image)} alt="" /><h3>{title}</h3><p>{text}</p></div>)}</div><CTA>QUERO O MATERIAL COMPLETO</CTA>
+      ].map(([image, title, text]) => <div className="method-item" key={title}><img loading="lazy" src={asset(image ?? '')} alt="" /><h3>{title}</h3><p>{text}</p></div>)}</div><CTA>QUERO O MATERIAL COMPLETO</CTA>
     </div></section>
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Já pensou em ver a criança tocando na flauta doce <span>as cantigas que ela ama?</span></h2>

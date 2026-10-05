@@ -1,4 +1,4 @@
 # Roadmap
-- [ ] Recreate the complete reference sales page and source imagery.
-- [ ] Wire galleries, offer buttons, and frequently asked questions.
-- [ ] Verify page appearance and interactions.
+- [x] Recreate the complete reference sales page and source imagery.
+- [x] Wire galleries, offer buttons, and frequently asked questions.
+- [x] Verify page appearance and interactions.
