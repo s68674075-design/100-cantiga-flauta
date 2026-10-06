@@ -43,11 +43,7 @@ const faqs = [
 
 function CTA({ children = 'QUERO AS 100 CANTIGAS' }: { children?: ReactNode }) {
   return <div className="cta-wrap"><Button className="purchase-cta" onClick={() => document.getElementById('planos')?.scrollIntoView({ behavior: 'smooth' })}><ArrowRight />{children}</Button></div>;
-}
-function Delivery() {
-  return <div className="delivery">Você recebe tudo na hora, direto no seu<div className="delivery-icons"><img src={asset('wppicon')} alt="" /> WhatsApp e no seu <img src={asset('emailicon')} alt="" /> e-mail</div></div>;
-}
-function CheckList({ items, negative = false }: { items: string[]; negative?: boolean }) {
+}function CheckList({ items, negative = false }: { items: string[]; negative?: boolean }) {
   return <ul className={`check-list ${negative ? 'negative' : ''}`}>{items.map(item => <li key={item}>{negative ? <X /> : <Check />}<span>{item}</span></li>)}</ul>;
 }
 function Gallery({ names, onPreview, label }: { names: string[]; onPreview: (url: string) => void; label: string }) {
@@ -88,7 +84,7 @@ function Index() {
       <img className="hero-product" src={asset('heromockup')} alt="100 Cantigas Infantis para Flauta Doce: capa e páginas com dedilhados e notas coloridas" fetchPriority="high" />
       <div className="hero-details"><p className="intro-line"><Music2 size={22} /><span>Um material completo com canções divertidas para a criança tocar suas primeiras músicas na flauta doce em 15 minutos.</span></p>
         <CheckList items={['Cantigas divertidas com cifras melódicas simples, desenhos dos dedilhados e partituras coloridas', 'Para flauta doce soprano germânica e barroca com digitação completa', 'Material 100% digital e pronto para impressão']} />
-        <CTA>ACESSAR AGORA</CTA><Delivery />
+        <CTA>ACESSAR AGORA</CTA>
       </div>
     </section>
     <Timer />
@@ -130,7 +126,7 @@ function Index() {
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Tudo o que você <span>vai receber</span></h2><p className="section-caption"><Zap className="inline size-4 text-primary" /> Acesso imediato</p>
       <img className="receive-image" loading="lazy" src={asset('heromockup')} alt="Material principal com 100 cantigas infantis para flauta doce" />
-      <div className="receive-list"><CheckList items={['PDF principal com 203 páginas e 100 cantigas infantis para flauta doce', 'Cifras melódicas com a sequência das notas de cada música', 'Desenhos dos dedilhados para visualizar quais furos cobrir', 'Partituras coloridas e versões em preto e branco para imprimir', 'Material digital organizado para consultar e praticar no seu ritmo']} /></div><Delivery />
+      <div className="receive-list"><CheckList items={['PDF principal com 203 páginas e 100 cantigas infantis para flauta doce', 'Cifras melódicas com a sequência das notas de cada música', 'Desenhos dos dedilhados para visualizar quais furos cobrir', 'Partituras coloridas e versões em preto e branco para imprimir', 'Material digital organizado para consultar e praticar no seu ritmo']} /></div>
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">O plano completo entrega <span>ainda mais</span></h2><p className="section-caption">Você também vai receber <strong>6 bônus</strong> para construir uma base mais completa na flauta doce.</p>
