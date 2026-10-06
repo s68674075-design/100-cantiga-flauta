@@ -65,7 +65,7 @@ function Timer() {
 function Index() {
   const [preview, setPreview] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [today, setToday] = useState('05/10/2026');
+  const [today, setToday] = useState(() => new Intl.DateTimeFormat(undefined, { day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date()));
   const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => { setToday(new Date().toLocaleDateString('pt-BR')); }, []);
   useEffect(() => {
