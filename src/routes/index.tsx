@@ -27,7 +27,7 @@ const bonuses = [
   { image: 'b6', title: 'Certificado de Conclusão', subtitle: 'Uma forma especial de celebrar cada conquista', points: ['Certificado de Musicalização Infantil com Flauta Doce Soprano', 'Espaço para nome do aluno e data ou período', 'Campo para assinatura da instrutora ou responsável', 'Um incentivo visual para reconhecer a dedicação da criança'], price: '20' },
 ];
 const faqs = [
-  ['Como vou receber o material?', 'Após a confirmação da compra, você recebe o acesso aos arquivos digitais diretamente no seu WhatsApp e e-mail. O acesso é imediato.'],
+  ['Como vou receber o material?', 'Após a confirmação da compra, você recebe o acesso aos arquivos digitais Acesso imediato. O acesso é imediato.'],
   ['O plano básico inclui o quê?', 'O plano básico inclui o PDF principal com 203 páginas e 100 cantigas infantis para flauta doce, cifras melódicas, desenhos dos dedilhados e partituras coloridas e em preto e branco.'],
   ['O que tem no plano completo?', 'Você recebe todo o material principal e os 6 bônus: Método Prático de Iniciação, Guia Visual de Dedilhados, Leitura de Partituras, Guia de Digitação Sonora, Escalas e Acordes e Certificado de Conclusão.'],
   ['A criança precisa saber partitura para usar?', 'Não. A criança pode começar pelas cifras melódicas, que mostram os nomes das notas, e pelos desenhos dos dedilhados. As partituras ajudam a desenvolver a leitura musical aos poucos.'],
