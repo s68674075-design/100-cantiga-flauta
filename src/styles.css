@@ -64,7 +64,7 @@ h1,h2,h3,p { margin: 0; }
 .check-list svg { width: 16px; height: 16px; color: var(--aqua); flex-shrink: 0; margin-top: 2px; }
 .cta-wrap { text-align: center; }
 .purchase-cta { min-height: 48px; height: auto; max-width: 100%; min-width: 300px; font-size: 16px; font-weight: 900; padding: 14px 22px; box-shadow: var(--shadow-cta); white-space: normal; line-height: 1.25; }
-.timer-band { background: var(--sale); color: var(--sale-foreground); padding: 18px 20px; display: flex; justify-content: center; align-items: center; gap: 24px; }
+.timer-band { background: var(--sale); color: var(--sale-foreground); padding: 10px 20px; display: flex; justify-content: center; align-items: center; gap: 16px; }
 .timer-band p { font-size: 14px; font-weight: 800; }
 .timer-clock { display: flex; align-items: center; gap: 8px; }
 .timer-unit { min-width: 57px; padding: 5px 12px; border: 1px solid color-mix(in oklch,var(--sale-foreground) 40%,transparent); border-radius: 8px; text-align: center; }
@@ -153,7 +153,7 @@ h1,h2,h3,p { margin: 0; }
   .hero-details { font-size: 13px; }
   .sale-bar { font-size: 9px; }
   .purchase-cta { min-width: 0; width: 100%; font-size: 14px; }
-  .timer-band { flex-direction: column; gap: 12px; }
+  .timer-band { flex-direction: column; gap: 8px; padding: 10px 20px; }
   .timer-band p { font-size: 12px; }
   .page-section { padding: 42px 20px; }
   .section-title { font-size: 24px; }
