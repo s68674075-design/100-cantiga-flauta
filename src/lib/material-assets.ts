@@ -40,7 +40,6 @@ import asset38 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0013-BIte3XBk
 import asset39 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0017-DHezrdpQ.webp.asset.json";
 import asset40 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0019-DafZbzu0.webp.asset.json";
 import asset41 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0020-ggaEkPrP.webp.asset.json";
-import trustBadge from "@/assets/trust-badge.png";
 import asset46 from "@/assets/coupleimg-7XRkm433.webp.asset.json";
 import b1metodoinfantilflautadulce from "@/assets/b1metodoinfantilflautadulce.webp";
 import b2guavisualdigitacaomusical from "@/assets/b2guavisualdigitacaomusical.webp";
@@ -54,7 +53,6 @@ import asset54 from "@/assets/escassez-7yxr_wfr.webp.asset.json";
 import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.webp";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
-import imagem from "@/assets/image.webp";
 import garantia7dias from "@/assets/garantia7dias.svg";
 import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.webp";
 import paginaDentro01 from "@/assets/pagina-dentro-01.webp";
@@ -189,7 +187,6 @@ export const materialAssets: Record<string, string> = {
   "pacotebasico-XxDeOEx5.webp": asset53.url,
   "escassez-7yxr_wfr.webp": asset54.url,
   "pacotecompleto.webp": pacotecompleto,
-  "trust-badge.png": trustBadge,
   "feedb1-BSTDy1X_.webp": asset57.url,
   "garantia15dias-xBbq_3xB.webp": asset58.url,
   "garantia7dias.svg": garantia7dias,
@@ -233,7 +230,6 @@ export const materialAssets: Record<string, string> = {
   "feedback-09.webp": feedback09,
   "feedback-10.webp": feedback10,
   "selo-garantia-7-dias.webp": seloGarantia7Dias,
-  "image.webp": imagem,
 };
 export const materialFullAssets: Record<string, string> = {
   "feedback-01.webp": feedback01Lg,
