@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { ArrowDown, ArrowRight, BookOpen, Check, ChevronDown, ChevronLeft, ChevronRight, Download, Heart, LockKeyhole, Music2, Printer, ShieldCheck, Sparkles, Star, Users, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { asset, materialAssets } from '@/lib/material-assets';
+import { asset, materialAssets, materialFullAssets } from '@/lib/material-assets';
 
 const heroImage = asset('livroinfantilflautadoce');
 
@@ -49,10 +49,20 @@ function CTA({ children = 'QUERO AS 100 CANTIGAS' }: { children?: ReactNode }) {
   return <ul className={`check-list ${negative ? 'negative' : ''}`}>{items.map(item => <li key={item}>{negative ? <X /> : <Check />}<span>{item}</span></li>)}</ul>;
 }
 function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }: { names: string[]; onPreview: (url: string) => void; label: string; className?: string; autoDirection?: 1 | -1 | 0 }) {
+  const root = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
+  const [ready, setReady] = useState(false);
   const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
+  useEffect(() => {
+    const el = root.current;
+    if (!el || ready) return;
+    if (typeof IntersectionObserver === 'undefined') { setReady(true); return; }
+    const io = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting)) { setReady(true); io.disconnect(); } }, { rootMargin: '900px 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ready]);
   useEffect(() => {
     if (!autoDirection || paused) return;
     if (typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -72,9 +82,9 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
     }, 3200);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
-  return <div className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
+  return <div ref={root} className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
     <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
-      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" decoding="async" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
+      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready ? 'eager' : 'lazy'} fetchPriority="low" decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;

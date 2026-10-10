@@ -99,6 +99,44 @@ import feedback08 from "@/assets/feedback-08.webp";
 import feedback09 from "@/assets/feedback-09.webp";
 import feedback10 from "@/assets/feedback-10.webp";
 import seloGarantia7Dias from "@/assets/selo-garantia-7-dias.webp";
+import feedback01Lg from "@/assets/feedback-01-lg.webp";
+import feedback02Lg from "@/assets/feedback-02-lg.webp";
+import feedback03Lg from "@/assets/feedback-03-lg.webp";
+import feedback04Lg from "@/assets/feedback-04-lg.webp";
+import feedback05Lg from "@/assets/feedback-05-lg.webp";
+import feedback06Lg from "@/assets/feedback-06-lg.webp";
+import feedback07Lg from "@/assets/feedback-07-lg.webp";
+import feedback08Lg from "@/assets/feedback-08-lg.webp";
+import feedback09Lg from "@/assets/feedback-09-lg.webp";
+import feedback10Lg from "@/assets/feedback-10-lg.webp";
+import maisPaginas01Lg from "@/assets/mais-paginas-01-lg.webp";
+import maisPaginas02Lg from "@/assets/mais-paginas-02-lg.webp";
+import maisPaginas03Lg from "@/assets/mais-paginas-03-lg.webp";
+import maisPaginas04Lg from "@/assets/mais-paginas-04-lg.webp";
+import maisPaginas05Lg from "@/assets/mais-paginas-05-lg.webp";
+import maisPaginas06Lg from "@/assets/mais-paginas-06-lg.webp";
+import maisPaginas07Lg from "@/assets/mais-paginas-07-lg.webp";
+import maisPaginas08Lg from "@/assets/mais-paginas-08-lg.webp";
+import maisPaginas09Lg from "@/assets/mais-paginas-09-lg.webp";
+import maisPaginas10Lg from "@/assets/mais-paginas-10-lg.webp";
+import paginaDentro01Lg from "@/assets/pagina-dentro-01-lg.webp";
+import paginaDentro02Lg from "@/assets/pagina-dentro-02-lg.webp";
+import paginaDentro03Lg from "@/assets/pagina-dentro-03-lg.webp";
+import paginaDentro04Lg from "@/assets/pagina-dentro-04-lg.webp";
+import paginaDentro05Lg from "@/assets/pagina-dentro-05-lg.webp";
+import paginaDentro06Lg from "@/assets/pagina-dentro-06-lg.webp";
+import paginaDentro07Lg from "@/assets/pagina-dentro-07-lg.webp";
+import paginaDentro08Lg from "@/assets/pagina-dentro-08-lg.webp";
+import paginaDentro09Lg from "@/assets/pagina-dentro-09-lg.webp";
+import paginaDentro10Lg from "@/assets/pagina-dentro-10-lg.webp";
+import partituras01Lg from "@/assets/partituras-01-lg.webp";
+import partituras02Lg from "@/assets/partituras-02-lg.webp";
+import partituras03Lg from "@/assets/partituras-03-lg.webp";
+import partituras04Lg from "@/assets/partituras-04-lg.webp";
+import partituras05Lg from "@/assets/partituras-05-lg.webp";
+import partituras06Lg from "@/assets/partituras-06-lg.webp";
+import partituras07Lg from "@/assets/partituras-07-lg.webp";
+import partituras08Lg from "@/assets/partituras-08-lg.webp";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -203,4 +241,45 @@ export const materialAssets: Record<string, string> = {
   "feedback-10.webp": feedback10,
   "selo-garantia-7-dias.webp": seloGarantia7Dias,
 };
+export const materialFullAssets: Record<string, string> = {
+  "feedback-01.webp": feedback01Lg,
+  "feedback-02.webp": feedback02Lg,
+  "feedback-03.webp": feedback03Lg,
+  "feedback-04.webp": feedback04Lg,
+  "feedback-05.webp": feedback05Lg,
+  "feedback-06.webp": feedback06Lg,
+  "feedback-07.webp": feedback07Lg,
+  "feedback-08.webp": feedback08Lg,
+  "feedback-09.webp": feedback09Lg,
+  "feedback-10.webp": feedback10Lg,
+  "mais-paginas-01.webp": maisPaginas01Lg,
+  "mais-paginas-02.webp": maisPaginas02Lg,
+  "mais-paginas-03.webp": maisPaginas03Lg,
+  "mais-paginas-04.webp": maisPaginas04Lg,
+  "mais-paginas-05.webp": maisPaginas05Lg,
+  "mais-paginas-06.webp": maisPaginas06Lg,
+  "mais-paginas-07.webp": maisPaginas07Lg,
+  "mais-paginas-08.webp": maisPaginas08Lg,
+  "mais-paginas-09.webp": maisPaginas09Lg,
+  "mais-paginas-10.webp": maisPaginas10Lg,
+  "pagina-dentro-01.webp": paginaDentro01Lg,
+  "pagina-dentro-02.webp": paginaDentro02Lg,
+  "pagina-dentro-03.webp": paginaDentro03Lg,
+  "pagina-dentro-04.webp": paginaDentro04Lg,
+  "pagina-dentro-05.webp": paginaDentro05Lg,
+  "pagina-dentro-06.webp": paginaDentro06Lg,
+  "pagina-dentro-07.webp": paginaDentro07Lg,
+  "pagina-dentro-08.webp": paginaDentro08Lg,
+  "pagina-dentro-09.webp": paginaDentro09Lg,
+  "pagina-dentro-10.webp": paginaDentro10Lg,
+  "partituras-01.webp": partituras01Lg,
+  "partituras-02.webp": partituras02Lg,
+  "partituras-03.webp": partituras03Lg,
+  "partituras-04.webp": partituras04Lg,
+  "partituras-05.webp": partituras05Lg,
+  "partituras-06.webp": partituras06Lg,
+  "partituras-07.webp": partituras07Lg,
+  "partituras-08.webp": partituras08Lg,
+};
+
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";
