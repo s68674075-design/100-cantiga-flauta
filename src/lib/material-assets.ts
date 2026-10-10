@@ -70,6 +70,14 @@ import paginaDentro07 from "@/assets/pagina-dentro-07.jpeg";
 import paginaDentro08 from "@/assets/pagina-dentro-08.jpeg";
 import paginaDentro09 from "@/assets/pagina-dentro-09.jpeg";
 import paginaDentro10 from "@/assets/pagina-dentro-10.jpeg";
+import partituras01 from "@/assets/partituras-01.jpeg";
+import partituras02 from "@/assets/partituras-02.jpeg";
+import partituras03 from "@/assets/partituras-03.jpeg";
+import partituras04 from "@/assets/partituras-04.jpeg";
+import partituras05 from "@/assets/partituras-05.jpeg";
+import partituras06 from "@/assets/partituras-06.jpeg";
+import partituras07 from "@/assets/partituras-07.jpeg";
+import partituras08 from "@/assets/partituras-08.jpeg";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -144,5 +152,13 @@ export const materialAssets: Record<string, string> = {
   "pagina-dentro-08.jpeg": paginaDentro08,
   "pagina-dentro-09.jpeg": paginaDentro09,
   "pagina-dentro-10.jpeg": paginaDentro10,
+  "partituras-01.jpeg": partituras01,
+  "partituras-02.jpeg": partituras02,
+  "partituras-03.jpeg": partituras03,
+  "partituras-04.jpeg": partituras04,
+  "partituras-05.jpeg": partituras05,
+  "partituras-06.jpeg": partituras06,
+  "partituras-07.jpeg": partituras07,
+  "partituras-08.jpeg": partituras08,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";

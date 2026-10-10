@@ -16,7 +16,7 @@ export const Route = createFileRoute('/')({
 
 const allNames = Object.keys(materialAssets);
 const insidePages = allNames.filter(n => n.startsWith('pagina-dentro'));
-const scorePages = allNames.slice(17, 31);
+const partiturasPages = allNames.filter(n => n.startsWith('partituras'));
 const morePages = allNames.filter(n => n.startsWith('100_Cantigas'));
 const bonuses = [
   { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '27' },
@@ -91,7 +91,7 @@ function Index() {
       <p className="section-caption">Tudo já vem organizado para você <strong>baixar, imprimir e começar a praticar na flauta doce</strong> sem perder tempo montando atividades do zero.</p>
       <div className="workflow"><div className="workflow-item"><Download />Baixa</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Printer />Imprime</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Music2 />Toca e aprende brincando!</div></div>
       <CTA />
-      <Gallery names={scorePages} onPreview={setPreview} label="Partituras coloridas e em preto e branco" />
+      <Gallery names={partiturasPages} onPreview={setPreview} label="Partituras coloridas e em preto e branco" />
       <Gallery names={morePages} onPreview={setPreview} label="Mais páginas do material" />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
