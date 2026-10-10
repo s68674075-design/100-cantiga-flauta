@@ -40,10 +40,7 @@ import asset38 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0013-BIte3XBk
 import asset39 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0017-DHezrdpQ.webp.asset.json";
 import asset40 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0019-DafZbzu0.webp.asset.json";
 import asset41 from "@/assets/100_Cantigas_FlautaDoce_removed_page-0020-ggaEkPrP.webp.asset.json";
-import asset42 from "@/assets/lampadaicon-C1oUS2T2.webp.asset.json";
-import asset43 from "@/assets/cerebroicon-DSVudLXF.webp.asset.json";
-import asset44 from "@/assets/papelicon-ChZBRUEb.webp.asset.json";
-import asset45 from "@/assets/phoneicon-BTcsD1bL.webp.asset.json";
+import trustBadge from "@/assets/trust-badge.png";
 import asset46 from "@/assets/coupleimg-7XRkm433.webp.asset.json";
 import b1metodoinfantilflautadulce from "@/assets/b1metodoinfantilflautadulce.webp";
 import b2guavisualdigitacaomusical from "@/assets/b2guavisualdigitacaomusical.webp";
@@ -55,7 +52,6 @@ import asset52 from "@/assets/b6certificado-BlMZ8rey.webp.asset.json";
 import asset53 from "@/assets/pacotebasico-XxDeOEx5.webp.asset.json";
 import asset54 from "@/assets/escassez-7yxr_wfr.webp.asset.json";
 import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.webp";
-import asset56 from "@/assets/trust-CiqvnMrT.webp.asset.json";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
 import garantia7dias from "@/assets/garantia7dias.svg";
@@ -181,10 +177,6 @@ export const materialAssets: Record<string, string> = {
   "100_Cantigas_FlautaDoce_removed_page-0017-DHezrdpQ.webp": asset39.url,
   "100_Cantigas_FlautaDoce_removed_page-0019-DafZbzu0.webp": asset40.url,
   "100_Cantigas_FlautaDoce_removed_page-0020-ggaEkPrP.webp": asset41.url,
-  "lampadaicon-C1oUS2T2.webp": asset42.url,
-  "cerebroicon-DSVudLXF.webp": asset43.url,
-  "papelicon-ChZBRUEb.webp": asset44.url,
-  "phoneicon-BTcsD1bL.webp": asset45.url,
   "coupleimg-7XRkm433.webp": asset46.url,
   "b1metodoinfantilflautadulce.webp": b1metodoinfantilflautadulce,
   "b2guavisualdigitacaomusical.webp": b2guavisualdigitacaomusical,
@@ -196,7 +188,7 @@ export const materialAssets: Record<string, string> = {
   "pacotebasico-XxDeOEx5.webp": asset53.url,
   "escassez-7yxr_wfr.webp": asset54.url,
   "pacotecompleto.webp": pacotecompleto,
-  "trust-CiqvnMrT.webp": asset56.url,
+  "trust-badge.png": trustBadge,
   "feedb1-BSTDy1X_.webp": asset57.url,
   "garantia15dias-xBbq_3xB.webp": asset58.url,
   "garantia7dias.svg": garantia7dias,

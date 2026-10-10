@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ArrowDown, ArrowRight, BookOpen, Check, ChevronDown, ChevronLeft, ChevronRight, Download, Heart, LockKeyhole, Music2, Printer, ShieldCheck, Sparkles, Star, Users, X, Zap } from 'lucide-react';
+import { ArrowDown, ArrowRight, BookOpen, Brain, Check, ChevronDown, ChevronLeft, ChevronRight, Download, FileText, Heart, Lightbulb, LockKeyhole, Music2, Printer, ShieldCheck, Smartphone, Sparkles, Star, Users, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { asset, materialAssets, materialFullAssets } from '@/lib/material-assets';
 
@@ -54,7 +54,7 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
-  const items = autoDirection ? Array.from({ length: 3 }, () => names).flat() : names;
+  const items = names;
   const cardStep = (el: HTMLElement) => {
     const first = el.firstElementChild as HTMLElement | null;
     const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
@@ -67,8 +67,8 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
     const st = cardStep(el);
     const sw = setWidth(el);
     if (autoDirection && sw > 0) {
-      if (direction > 0 && el.scrollLeft >= sw) el.scrollLeft -= sw;
-      else if (direction < 0 && el.scrollLeft <= st * 0.5) el.scrollLeft += sw;
+      if (direction > 0 && el.scrollLeft + el.clientWidth >= sw - 4) { el.scrollTo({ left: 0, behavior: 'auto' }); return; }
+      if (direction < 0 && el.scrollLeft <= 4) { el.scrollTo({ left: sw, behavior: 'auto' }); return; }
     }
     el.scrollBy({ left: direction * st, behavior: 'smooth' });
   };
@@ -87,7 +87,7 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   }, [autoDirection, ready, names.length]);
   useEffect(() => {
     if (!autoDirection || paused) return;
-    const id = window.setInterval(() => move(autoDirection), 1600);
+    const id = window.setInterval(() => move(autoDirection), 2400);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
   const onScroll = () => {
@@ -99,7 +99,7 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   };
   return <div ref={root} className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
     <div className="gallery-track" ref={track} style={autoDirection ? { scrollSnapType: 'none' } : undefined} onScroll={onScroll}>
-      {items.map((name, i) => <Button key={`${name}-${i}`} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${(i % names.length) + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready ? 'eager' : 'lazy'} fetchPriority="low" decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${(i % names.length) + 1}`} /></Button>)}
+      {items.map((name, i) => <Button key={`${name}-${i}`} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${(i % names.length) + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready && i < 4 ? 'eager' : 'lazy'} fetchPriority={i < 4 ? 'high' : 'low'} decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${(i % names.length) + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;
@@ -147,11 +147,11 @@ function Index() {
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">Um método simples para <span>aprender flauta doce brincando</span></h2>
       <div className="method-grid">{[
-        ['lampadaicon', '100 cantigas prontas', 'Um repertório infantil conhecido para praticar flauta doce com músicas que despertam interesse e vontade de repetir.'],
-        ['cerebroicon', 'Cifras melódicas simples', 'Os nomes das notas aparecem na sequência da melodia para facilitar a prática de quem ainda está começando.'],
-        ['papelicon', 'Dedilhados e notas coloridas', 'Os desenhos mostram quais furos cobrir, enquanto as cores ajudam a relacionar cada nota à partitura.'],
-        ['phoneicon', 'Acesso 100% digital', 'Receba os PDFs, use no celular ou tablet e imprima as páginas para praticar em casa ou nas aulas.'],
-      ].map(([image, title, text]) => <div className="method-item" key={title}><img loading="lazy" src={asset(image ?? '')} alt="" /><h3>{title}</h3><p>{text}</p></div>)}</div><CTA>QUERO O MATERIAL COMPLETO</CTA>
+        { icon: Lightbulb, title: '100 cantigas prontas', text: 'Um repertório infantil conhecido para praticar flauta doce com músicas que despertam interesse e vontade de repetir.' },
+        { icon: Brain, title: 'Cifras melódicas simples', text: 'Os nomes das notas aparecem na sequência da melodia para facilitar a prática de quem ainda está começando.' },
+        { icon: FileText, title: 'Dedilhados e notas coloridas', text: 'Os desenhos mostram quais furos cobrir, enquanto as cores ajudam a relacionar cada nota à partitura.' },
+        { icon: Smartphone, title: 'Acesso 100% digital', text: 'Receba os PDFs, use no celular ou tablet e imprima as páginas para praticar em casa ou nas aulas.' },
+      ].map(item => <div className="method-item" key={item.title}><item.icon className="method-icon" aria-hidden="true" /><h3>{item.title}</h3><p>{item.text}</p></div>)}</div><CTA>QUERO O MATERIAL COMPLETO</CTA>
     </div></section>
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Já pensou em ver a criança tocando na flauta doce <span>as cantigas que ela ama?</span></h2>
@@ -182,7 +182,7 @@ function Index() {
       <p className="offer-eyebrow">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</p><h2 className="section-title">Tenha o <span>plano completo</span></h2>
       <div className="plans-grid single-plan">
         <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 3 Bônus</h3><img loading="lazy" decoding="async" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e três bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="special-price-label">Precio especial de hoy</p><p className="old-price">de <s>US$ 27</s> por:</p><p className="plan-price"><small>US$</small>9</p><p className="savings">¡Ahorras (67% de descuento)!</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
-      </div><img className="trust-image" loading="lazy" src={asset('trust')} alt="Compra segura" />
+      </div><img className="trust-image" loading="lazy" decoding="async" src={asset('trust-badge')} alt="Compra segura" />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">Veja o que estão dizendo <span>sobre o material</span></h2><p className="section-caption">Feedbacks de quem buscou um jeito mais visual e prático de apresentar a flauta doce às crianças.</p><Gallery className="feedback-gallery" names={feedbackImages} onPreview={setPreview} label="Feedback sobre o material infantil de flauta doce" /><div className="review-score" aria-label="5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="review-count">(1723 avaliações)</p><CTA>QUERO GARANTIR AS 100 CANTIGAS</CTA>
