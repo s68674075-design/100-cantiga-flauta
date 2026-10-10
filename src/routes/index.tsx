@@ -7,9 +7,9 @@ import { asset, materialAssets } from '@/lib/material-assets';
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: '100 Cantigas Infantis para Flauta Doce — Cifras Kids' },
-    { name: 'description', content: '100 cantigas infantis com cifras melódicas, desenhos dos dedilhados e partituras coloridas. Conheça o material, os cinco bônus e os planos Cifras Kids.' },
+    { name: 'description', content: '100 cantigas infantis com cifras melódicas, desenhos dos dedilhados e partituras coloridas. Conheça o material, os três bônus e os planos Cifras Kids.' },
     { property: 'og:title', content: '100 Cantigas Infantis para Flauta Doce — Cifras Kids' },
-    { property: 'og:description', content: 'Um jeito visual e divertido de aprender flauta doce. Material digital pronto para impressão, com 100 cantigas e cinco bônus no plano completo.' },
+    { property: 'og:description', content: 'Um jeito visual e divertido de aprender flauta doce. Material digital pronto para impressão, com 100 cantigas e três bônus no plano completo.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
   ] }), component: Index,
 });
@@ -22,13 +22,11 @@ const bonuses = [
   { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '27' },
   { image: 'b2', title: 'Guia Visual de Dedilhados', subtitle: 'As posições das notas em uma consulta rápida', points: ['Mostra as posições das notas na flauta germânica', 'Inclui também os dedilhados da flauta barroca', 'Reúne notas naturais e alteradas em tabelas visuais', 'Facilita a consulta das posições durante cada prática'], price: '27' },
   { image: 'b3', title: 'Leitura de Partituras', subtitle: '30 páginas para entender a linguagem musical', points: ['Explica pauta, figuras, compassos, pausas e sinais de repetição', 'Apresenta notas, durações, ligaduras e sinais de alteração', 'Trabalha digitação, articulação, cifragem e compasso composto', 'Inclui propostas de criação e improvisação musical'], price: '27' },
-  { image: 'b5', title: 'Escalas e Acordes', subtitle: '32 páginas para ampliar a prática na flauta doce', points: ['Apresenta notas naturais e alteradas da segunda oitava', 'Trabalha as escalas de Dó maior e cromática', 'Exercícios melódicos ascendentes e descendentes', 'Desenvolve extensão, agilidade e segurança nas notas'], price: '27' },
-  { image: 'b6', title: 'Certificado de Conclusão', subtitle: 'Uma forma especial de celebrar cada conquista', points: ['Certificado de Musicalização Infantil com Flauta Doce Soprano', 'Espaço para nome do aluno e data ou período', 'Campo para assinatura da instrutora ou responsável', 'Um incentivo visual para reconhecer a dedicação da criança'], price: '20' },
 ];
 const faqs = [
   ['Como vou receber o material?', 'Após a confirmação da compra, você recebe o acesso aos arquivos digitais Acesso imediato por e-mail. O acesso é imediato.'],
   ['O plano básico inclui o quê?', 'O plano básico inclui o PDF principal com 203 páginas e 100 cantigas infantis para flauta doce, cifras melódicas, desenhos dos dedilhados e partituras coloridas e em preto e branco.'],
-  ['O que tem no plano completo?', 'Você recebe todo o material principal e os 5 bônus: Método Prático de Iniciação, Guia Visual de Dedilhados, Leitura de Partituras, Escalas e Acordes e Certificado de Conclusão.'],
+  ['O que tem no plano completo?', 'Você recebe todo o material principal e os 3 bônus: Método Prático de Iniciação, Guia Visual de Dedilhados e Leitura de Partituras.'],
   ['A criança precisa saber partitura para usar?', 'Não. A criança pode começar pelas cifras melódicas, que mostram os nomes das notas, e pelos desenhos dos dedilhados. As partituras ajudam a desenvolver a leitura musical aos poucos.'],
   ['Serve para quem nunca tocou flauta doce?', 'Sim. O material foi pensado para a iniciação. No plano completo, o Método Prático de Iniciação também apresenta o instrumento, a postura, a respiração e os primeiros exercícios.'],
   ['Quais músicas fazem parte do material?', 'São 100 cantigas infantis conhecidas, como A Canoa Virou, Atirei o Pau no Gato, Brilha Brilha Estrelinha, Ciranda Cirandinha, Marcha Soldado, O Cravo e a Rosa e Sapo Cururu, entre outras.'],
@@ -127,13 +125,13 @@ function Index() {
       <div className="receive-list"><CheckList items={['PDF principal com 203 páginas e 100 cantigas infantis para flauta doce', 'Cifras melódicas com a sequência das notas de cada música', 'Desenhos dos dedilhados para visualizar quais furos cobrir', 'Partituras coloridas e versões em preto e branco para imprimir', 'Material digital organizado para consultar e praticar no seu ritmo']} /></div>
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
-      <h2 className="section-title">O plano completo entrega <span>ainda mais</span></h2><p className="section-caption">Você também vai receber <strong>5 bônus</strong> para construir uma base mais completa na flauta doce.</p>
+      <h2 className="section-title">O plano completo entrega <span>ainda mais</span></h2><p className="section-caption">Você também vai receber <strong>3 bônus</strong> para construir uma base mais completa na flauta doce.</p>
       <div className="bonus-grid">{bonuses.map((bonus, i) => <article className="bonus-card" key={bonus.title}><span className="bonus-label">Bônus {i + 1}</span><img loading="lazy" src={asset(bonus.image)} alt={bonus.title} /><h3>{bonus.title}</h3><p className="subtitle">({bonus.subtitle})</p><CheckList items={bonus.points} /><p className="bonus-value">Valor: <s>R${bonus.price}</s> <ArrowRight className="inline size-4 mx-2" /><strong>Grátis</strong></p></article>)}</div>
     </div></section>
     <section className="page-section" id="planos"><div className="section-inner">
       <p className="offer-eyebrow">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</p><h2 className="section-title">Tenha o <span>plano completo</span></h2>
       <div className="plans-grid single-plan">
-        <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 5 Bônus</h3><img loading="lazy" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e cinco bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="old-price">de <s>R$138,90</s> por:</p><p className="plan-price"><small>R$</small>27,90</p><p className="installments">ou 4x de R$7,85 no cartão</p><p className="savings">🔥 Você economiza R$111,00</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
+        <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 3 Bônus</h3><img loading="lazy" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e três bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="old-price">de <s>R$138,90</s> por:</p><p className="plan-price"><small>R$</small>27,90</p><p className="installments">ou 4x de R$7,85 no cartão</p><p className="savings">🔥 Você economiza R$111,00</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
       </div><img className="trust-image" loading="lazy" src={asset('trust')} alt="Compra segura" />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
