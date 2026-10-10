@@ -127,6 +127,7 @@ h1,h2,h3,p { margin: 0; }
 .plan-price small { font-size: 23px; }
 .old-price { color: var(--muted-foreground); font-size: 13px; }
 .installments { font-size: 13px; }
+.special-price-label { font-size: 13px; font-weight: 900; color: var(--sale); margin-bottom: 6px; }
 .savings { font-size: 12px; color: var(--primary); font-weight: 800; margin: 14px 0 18px; }
 .trust-image { width: 280px; height: 48px; object-fit: contain; margin: 0 auto; display: block; }
 .feedback-image { width: 430px; height: auto; max-width: 100%; margin: 25px auto 20px; display: block; border-radius: 6px; }
