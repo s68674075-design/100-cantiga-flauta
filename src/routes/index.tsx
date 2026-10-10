@@ -129,7 +129,6 @@ function Index() {
     <section className="hero">
       <h1>100 <span>cantigas infantis</span> para crianças aprender <span>flauta doce</span> de forma <span>fácil e divertida</span> prontas para impressão</h1>
       <img className="hero-product" src={heroImage} width={577} height={433} alt="100 Cantigas Infantis para Flauta Doce: capa e páginas com dedilhados e notas coloridas" fetchPriority="high" decoding="async" />
-      <img className="hero-product" src={asset('image')} width={577} height={433} alt="Imagem do material" fetchPriority="high" decoding="async" />
       <div className="hero-details"><p className="intro-line"><Music2 size={22} /><span>Um material completo com canções divertidas para a criança tocar suas primeiras músicas na flauta doce em 15 minutos.</span></p>
         <CheckList items={['Cantigas divertidas com cifras melódicas simples, desenhos dos dedilhados e partituras coloridas', 'Para flauta doce soprano germânica e barroca com digitação completa', 'Material 100% digital e pronto para impressão']} />
         <CTA>ACESSAR AGORA</CTA>
@@ -183,7 +182,7 @@ function Index() {
       <p className="offer-eyebrow">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</p><h2 className="section-title">Tenha o <span>plano completo</span></h2>
       <div className="plans-grid single-plan">
         <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 3 Bônus</h3><img loading="lazy" decoding="async" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e três bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="special-price-label">Precio especial de hoy</p><p className="old-price">de <s>US$ 27</s> por:</p><p className="plan-price"><small>US$</small>9</p><p className="savings">¡Ahorras (67% de descuento)!</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
-      </div><img className="trust-image" loading="lazy" decoding="async" src={asset('trust-badge')} alt="Compra segura" />
+      </div>
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">Veja o que estão dizendo <span>sobre o material</span></h2><p className="section-caption">Feedbacks de quem buscou um jeito mais visual e prático de apresentar a flauta doce às crianças.</p><Gallery className="feedback-gallery" names={feedbackImages} onPreview={setPreview} label="Feedback sobre o material infantil de flauta doce" /><div className="review-score" aria-label="5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="review-count">(1723 avaliações)</p><CTA>QUERO GARANTIR AS 100 CANTIGAS</CTA>
