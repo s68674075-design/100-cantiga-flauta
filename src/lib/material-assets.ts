@@ -45,9 +45,10 @@ import asset43 from "@/assets/cerebroicon-DSVudLXF.webp.asset.json";
 import asset44 from "@/assets/papelicon-ChZBRUEb.webp.asset.json";
 import asset45 from "@/assets/phoneicon-BTcsD1bL.webp.asset.json";
 import asset46 from "@/assets/coupleimg-7XRkm433.webp.asset.json";
-import asset47 from "@/assets/b1guiainiciacao-CBU_IGnC.webp.asset.json";
-import asset48 from "@/assets/b2guiavisualdedilhados-D6vhcqFB.webp.asset.json";
-import asset49 from "@/assets/b3leituradepartitura-DPAJCQNT.webp.asset.json";
+import b1metodoinfantilflautadulce from "@/assets/b1metodoinfantilflautadulce.png";
+import b2guavisualdigitacaomusical from "@/assets/b2guavisualdigitacaomusical.png";
+import b3kitmusicalinfantilflautadoce from "@/assets/b3kitmusicalinfantilflautadoce.png";
+import criancastocandoflautadoce from "@/assets/criancastocandoflautadoce.png";
 import asset50 from "@/assets/b4digitacoessonora-BE5IRZI6.webp.asset.json";
 import asset51 from "@/assets/b5escalaseacordes-DBdd4mAt.webp.asset.json";
 import asset52 from "@/assets/b6certificado-BlMZ8rey.webp.asset.json";
@@ -108,9 +109,10 @@ export const materialAssets: Record<string, string> = {
   "papelicon-ChZBRUEb.webp": asset44.url,
   "phoneicon-BTcsD1bL.webp": asset45.url,
   "coupleimg-7XRkm433.webp": asset46.url,
-  "b1guiainiciacao-CBU_IGnC.webp": asset47.url,
-  "b2guiavisualdedilhados-D6vhcqFB.webp": asset48.url,
-  "b3leituradepartitura-DPAJCQNT.webp": asset49.url,
+  "b1metodoinfantilflautadulce.png": b1metodoinfantilflautadulce,
+  "b2guavisualdigitacaomusical.png": b2guavisualdigitacaomusical,
+  "b3kitmusicalinfantilflautadoce.png": b3kitmusicalinfantilflautadoce,
+  "criancastocandoflautadoce.png": criancastocandoflautadoce,
   "b4digitacoessonora-BE5IRZI6.webp": asset50.url,
   "b5escalaseacordes-DBdd4mAt.webp": asset51.url,
   "b6certificado-BlMZ8rey.webp": asset52.url,

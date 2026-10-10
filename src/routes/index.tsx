@@ -109,7 +109,7 @@ function Index() {
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Já pensou em ver a criança tocando na flauta doce <span>as cantigas que ela ama?</span></h2>
       <p className="section-caption">Sem um começo confuso e cheio de teoria.</p>
-      <img className="children-image" loading="lazy" src={asset('coupleimg')} alt="Crianças aprendendo flauta doce com um material visual" />
+      <img className="children-image" loading="lazy" src={asset('criancastocandoflautadoce')} alt="Criança tocando flauta doce" />
       <div className="comparison"><CheckList negative items={['A criança perde o interesse quando o aprendizado começa com teoria demais e pouca prática.', 'As notas e os dedilhados parecem confusos quando não há um apoio visual claro.', 'Você quer incentivar a música em casa ou na aula, mas não sabe qual sequência seguir.', 'Partituras tradicionais podem assustar antes mesmo de tocar uma música conhecida.']} /><CheckList items={['Começar por 100 cantigas que a criança já conhece e tem vontade de tocar.', 'Ler o nome das notas nas cifras melódicas sem depender só da partitura tradicional.', 'Visualizar quais furos cobrir em cada nota com os desenhos dos dedilhados.', 'Associar notas, cores e posições dos dedos de forma leve e progressiva.']} /></div>
       <CTA>QUERO FACILITAR ESSE APRENDIZADO</CTA>
     </div></section>
