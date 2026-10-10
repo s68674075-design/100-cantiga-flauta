@@ -48,11 +48,31 @@ function CTA({ children = 'QUERO AS 100 CANTIGAS' }: { children?: ReactNode }) {
 }function CheckList({ items, negative = false }: { items: string[]; negative?: boolean }) {
   return <ul className={`check-list ${negative ? 'negative' : ''}`}>{items.map(item => <li key={item}>{negative ? <X /> : <Check />}<span>{item}</span></li>)}</ul>;
 }
-function Gallery({ names, onPreview, label, className = '' }: { names: string[]; onPreview: (url: string) => void; label: string; className?: string }) {
+function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }: { names: string[]; onPreview: (url: string) => void; label: string; className?: string; autoDirection?: 1 | -1 | 0 }) {
   const track = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(1);
+  const [paused, setPaused] = useState(false);
   const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
-  return <div className={`gallery ${className}`.trim()} aria-label={label}>
+  useEffect(() => {
+    if (!autoDirection || paused) return;
+    if (typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const id = window.setInterval(() => {
+      const el = track.current;
+      if (!el) return;
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 0) return;
+      const step = el.scrollWidth / names.length;
+      if (autoDirection > 0) {
+        if (el.scrollLeft >= max - 4) el.scrollTo({ left: 0, behavior: 'smooth' });
+        else el.scrollBy({ left: step, behavior: 'smooth' });
+      } else {
+        if (el.scrollLeft <= 4) el.scrollTo({ left: max, behavior: 'smooth' });
+        else el.scrollBy({ left: -step, behavior: 'smooth' });
+      }
+    }, 3200);
+    return () => window.clearInterval(id);
+  }, [autoDirection, paused, names.length]);
+  return <div className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
     <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
       {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" decoding="async" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
@@ -92,12 +112,12 @@ function Index() {
     <Timer />
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Veja algumas páginas <span>por dentro</span></h2>
-      <Gallery names={insidePages} onPreview={setPreview} label="Cifras melódicas e dedilhados" />
+      <Gallery names={insidePages} onPreview={setPreview} label="Cifras melódicas e dedilhados" autoDirection={1} />
       <p className="section-caption">Tudo já vem organizado para você <strong>baixar, imprimir e começar a praticar na flauta doce</strong> sem perder tempo montando atividades do zero.</p>
       <div className="workflow"><div className="workflow-item"><Download />Baixa</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Printer />Imprime</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Music2 />Toca e aprende brincando!</div></div>
       <CTA />
-      <Gallery names={partiturasPages} onPreview={setPreview} label="Partituras coloridas e em preto e branco" />
-      <Gallery names={morePages} onPreview={setPreview} label="Mais páginas do material" />
+      <Gallery names={partiturasPages} onPreview={setPreview} label="Partituras coloridas e em preto e branco" autoDirection={-1} />
+      <Gallery names={morePages} onPreview={setPreview} label="Mais páginas do material" autoDirection={1} />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">Um método simples para <span>aprender flauta doce brincando</span></h2>
