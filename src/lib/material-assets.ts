@@ -45,60 +45,60 @@ import asset43 from "@/assets/cerebroicon-DSVudLXF.webp.asset.json";
 import asset44 from "@/assets/papelicon-ChZBRUEb.webp.asset.json";
 import asset45 from "@/assets/phoneicon-BTcsD1bL.webp.asset.json";
 import asset46 from "@/assets/coupleimg-7XRkm433.webp.asset.json";
-import b1metodoinfantilflautadulce from "@/assets/b1metodoinfantilflautadulce.png";
-import b2guavisualdigitacaomusical from "@/assets/b2guavisualdigitacaomusical.png";
-import b3kitmusicalinfantilflautadoce from "@/assets/b3kitmusicalinfantilflautadoce.png";
-import criancastocandoflautadoce from "@/assets/criancastocandoflautadoce.png";
+import b1metodoinfantilflautadulce from "@/assets/b1metodoinfantilflautadulce.webp";
+import b2guavisualdigitacaomusical from "@/assets/b2guavisualdigitacaomusical.webp";
+import b3kitmusicalinfantilflautadoce from "@/assets/b3kitmusicalinfantilflautadoce.webp";
+import criancastocandoflautadoce from "@/assets/criancastocandoflautadoce.webp";
 import asset50 from "@/assets/b4digitacoessonora-BE5IRZI6.webp.asset.json";
 import asset51 from "@/assets/b5escalaseacordes-DBdd4mAt.webp.asset.json";
 import asset52 from "@/assets/b6certificado-BlMZ8rey.webp.asset.json";
 import asset53 from "@/assets/pacotebasico-XxDeOEx5.webp.asset.json";
 import asset54 from "@/assets/escassez-7yxr_wfr.webp.asset.json";
-import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.png";
+import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.webp";
 import asset56 from "@/assets/trust-CiqvnMrT.webp.asset.json";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
 import garantia7dias from "@/assets/garantia7dias.svg";
-import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.png";
-import paginaDentro01 from "@/assets/pagina-dentro-01.jpeg";
-import paginaDentro02 from "@/assets/pagina-dentro-02.jpeg";
-import paginaDentro03 from "@/assets/pagina-dentro-03.jpeg";
-import paginaDentro04 from "@/assets/pagina-dentro-04.jpeg";
-import paginaDentro05 from "@/assets/pagina-dentro-05.jpeg";
-import paginaDentro06 from "@/assets/pagina-dentro-06.jpeg";
-import paginaDentro07 from "@/assets/pagina-dentro-07.jpeg";
-import paginaDentro08 from "@/assets/pagina-dentro-08.jpeg";
-import paginaDentro09 from "@/assets/pagina-dentro-09.jpeg";
-import paginaDentro10 from "@/assets/pagina-dentro-10.jpeg";
-import partituras01 from "@/assets/partituras-01.jpeg";
-import partituras02 from "@/assets/partituras-02.jpeg";
-import partituras03 from "@/assets/partituras-03.jpeg";
-import partituras04 from "@/assets/partituras-04.jpeg";
-import partituras05 from "@/assets/partituras-05.jpeg";
-import partituras06 from "@/assets/partituras-06.jpeg";
-import partituras07 from "@/assets/partituras-07.jpeg";
-import partituras08 from "@/assets/partituras-08.jpeg";
-import maisPaginas01 from "@/assets/mais-paginas-01.jpeg";
-import maisPaginas02 from "@/assets/mais-paginas-02.jpeg";
-import maisPaginas03 from "@/assets/mais-paginas-03.jpeg";
-import maisPaginas04 from "@/assets/mais-paginas-04.jpeg";
-import maisPaginas05 from "@/assets/mais-paginas-05.jpeg";
-import maisPaginas06 from "@/assets/mais-paginas-06.jpeg";
-import maisPaginas07 from "@/assets/mais-paginas-07.jpeg";
-import maisPaginas08 from "@/assets/mais-paginas-08.jpeg";
-import maisPaginas09 from "@/assets/mais-paginas-09.jpeg";
-import maisPaginas10 from "@/assets/mais-paginas-10.jpeg";
-import feedback01 from "@/assets/feedback-01.png";
-import feedback02 from "@/assets/feedback-02.png";
-import feedback03 from "@/assets/feedback-03.png";
-import feedback04 from "@/assets/feedback-04.png";
-import feedback05 from "@/assets/feedback-05.png";
-import feedback06 from "@/assets/feedback-06.png";
-import feedback07 from "@/assets/feedback-07.png";
-import feedback08 from "@/assets/feedback-08.png";
-import feedback09 from "@/assets/feedback-09.png";
-import feedback10 from "@/assets/feedback-10.png";
-import seloGarantia7Dias from "@/assets/selo-garantia-7-dias.png";
+import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.webp";
+import paginaDentro01 from "@/assets/pagina-dentro-01.webp";
+import paginaDentro02 from "@/assets/pagina-dentro-02.webp";
+import paginaDentro03 from "@/assets/pagina-dentro-03.webp";
+import paginaDentro04 from "@/assets/pagina-dentro-04.webp";
+import paginaDentro05 from "@/assets/pagina-dentro-05.webp";
+import paginaDentro06 from "@/assets/pagina-dentro-06.webp";
+import paginaDentro07 from "@/assets/pagina-dentro-07.webp";
+import paginaDentro08 from "@/assets/pagina-dentro-08.webp";
+import paginaDentro09 from "@/assets/pagina-dentro-09.webp";
+import paginaDentro10 from "@/assets/pagina-dentro-10.webp";
+import partituras01 from "@/assets/partituras-01.webp";
+import partituras02 from "@/assets/partituras-02.webp";
+import partituras03 from "@/assets/partituras-03.webp";
+import partituras04 from "@/assets/partituras-04.webp";
+import partituras05 from "@/assets/partituras-05.webp";
+import partituras06 from "@/assets/partituras-06.webp";
+import partituras07 from "@/assets/partituras-07.webp";
+import partituras08 from "@/assets/partituras-08.webp";
+import maisPaginas01 from "@/assets/mais-paginas-01.webp";
+import maisPaginas02 from "@/assets/mais-paginas-02.webp";
+import maisPaginas03 from "@/assets/mais-paginas-03.webp";
+import maisPaginas04 from "@/assets/mais-paginas-04.webp";
+import maisPaginas05 from "@/assets/mais-paginas-05.webp";
+import maisPaginas06 from "@/assets/mais-paginas-06.webp";
+import maisPaginas07 from "@/assets/mais-paginas-07.webp";
+import maisPaginas08 from "@/assets/mais-paginas-08.webp";
+import maisPaginas09 from "@/assets/mais-paginas-09.webp";
+import maisPaginas10 from "@/assets/mais-paginas-10.webp";
+import feedback01 from "@/assets/feedback-01.webp";
+import feedback02 from "@/assets/feedback-02.webp";
+import feedback03 from "@/assets/feedback-03.webp";
+import feedback04 from "@/assets/feedback-04.webp";
+import feedback05 from "@/assets/feedback-05.webp";
+import feedback06 from "@/assets/feedback-06.webp";
+import feedback07 from "@/assets/feedback-07.webp";
+import feedback08 from "@/assets/feedback-08.webp";
+import feedback09 from "@/assets/feedback-09.webp";
+import feedback10 from "@/assets/feedback-10.webp";
+import seloGarantia7Dias from "@/assets/selo-garantia-7-dias.webp";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -148,59 +148,59 @@ export const materialAssets: Record<string, string> = {
   "papelicon-ChZBRUEb.webp": asset44.url,
   "phoneicon-BTcsD1bL.webp": asset45.url,
   "coupleimg-7XRkm433.webp": asset46.url,
-  "b1metodoinfantilflautadulce.png": b1metodoinfantilflautadulce,
-  "b2guavisualdigitacaomusical.png": b2guavisualdigitacaomusical,
-  "b3kitmusicalinfantilflautadoce.png": b3kitmusicalinfantilflautadoce,
-  "criancastocandoflautadoce.png": criancastocandoflautadoce,
+  "b1metodoinfantilflautadulce.webp": b1metodoinfantilflautadulce,
+  "b2guavisualdigitacaomusical.webp": b2guavisualdigitacaomusical,
+  "b3kitmusicalinfantilflautadoce.webp": b3kitmusicalinfantilflautadoce,
+  "criancastocandoflautadoce.webp": criancastocandoflautadoce,
   "b4digitacoessonora-BE5IRZI6.webp": asset50.url,
   "b5escalaseacordes-DBdd4mAt.webp": asset51.url,
   "b6certificado-BlMZ8rey.webp": asset52.url,
   "pacotebasico-XxDeOEx5.webp": asset53.url,
   "escassez-7yxr_wfr.webp": asset54.url,
-  "pacotecompleto.png": pacotecompleto,
+  "pacotecompleto.webp": pacotecompleto,
   "trust-CiqvnMrT.webp": asset56.url,
   "feedb1-BSTDy1X_.webp": asset57.url,
   "garantia15dias-xBbq_3xB.webp": asset58.url,
   "garantia7dias.svg": garantia7dias,
-  "livroinfantilflautadoce.png": livroinfantilflautadoce,
-  "pagina-dentro-01.jpeg": paginaDentro01,
-  "pagina-dentro-02.jpeg": paginaDentro02,
-  "pagina-dentro-03.jpeg": paginaDentro03,
-  "pagina-dentro-04.jpeg": paginaDentro04,
-  "pagina-dentro-05.jpeg": paginaDentro05,
-  "pagina-dentro-06.jpeg": paginaDentro06,
-  "pagina-dentro-07.jpeg": paginaDentro07,
-  "pagina-dentro-08.jpeg": paginaDentro08,
-  "pagina-dentro-09.jpeg": paginaDentro09,
-  "pagina-dentro-10.jpeg": paginaDentro10,
-  "partituras-01.jpeg": partituras01,
-  "partituras-02.jpeg": partituras02,
-  "partituras-03.jpeg": partituras03,
-  "partituras-04.jpeg": partituras04,
-  "partituras-05.jpeg": partituras05,
-  "partituras-06.jpeg": partituras06,
-  "partituras-07.jpeg": partituras07,
-  "partituras-08.jpeg": partituras08,
-  "mais-paginas-01.jpeg": maisPaginas01,
-  "mais-paginas-02.jpeg": maisPaginas02,
-  "mais-paginas-03.jpeg": maisPaginas03,
-  "mais-paginas-04.jpeg": maisPaginas04,
-  "mais-paginas-05.jpeg": maisPaginas05,
-  "mais-paginas-06.jpeg": maisPaginas06,
-  "mais-paginas-07.jpeg": maisPaginas07,
-  "mais-paginas-08.jpeg": maisPaginas08,
-  "mais-paginas-09.jpeg": maisPaginas09,
-  "mais-paginas-10.jpeg": maisPaginas10,
-  "feedback-01.png": feedback01,
-  "feedback-02.png": feedback02,
-  "feedback-03.png": feedback03,
-  "feedback-04.png": feedback04,
-  "feedback-05.png": feedback05,
-  "feedback-06.png": feedback06,
-  "feedback-07.png": feedback07,
-  "feedback-08.png": feedback08,
-  "feedback-09.png": feedback09,
-  "feedback-10.png": feedback10,
-  "selo-garantia-7-dias.png": seloGarantia7Dias,
+  "livroinfantilflautadoce.webp": livroinfantilflautadoce,
+  "pagina-dentro-01.webp": paginaDentro01,
+  "pagina-dentro-02.webp": paginaDentro02,
+  "pagina-dentro-03.webp": paginaDentro03,
+  "pagina-dentro-04.webp": paginaDentro04,
+  "pagina-dentro-05.webp": paginaDentro05,
+  "pagina-dentro-06.webp": paginaDentro06,
+  "pagina-dentro-07.webp": paginaDentro07,
+  "pagina-dentro-08.webp": paginaDentro08,
+  "pagina-dentro-09.webp": paginaDentro09,
+  "pagina-dentro-10.webp": paginaDentro10,
+  "partituras-01.webp": partituras01,
+  "partituras-02.webp": partituras02,
+  "partituras-03.webp": partituras03,
+  "partituras-04.webp": partituras04,
+  "partituras-05.webp": partituras05,
+  "partituras-06.webp": partituras06,
+  "partituras-07.webp": partituras07,
+  "partituras-08.webp": partituras08,
+  "mais-paginas-01.webp": maisPaginas01,
+  "mais-paginas-02.webp": maisPaginas02,
+  "mais-paginas-03.webp": maisPaginas03,
+  "mais-paginas-04.webp": maisPaginas04,
+  "mais-paginas-05.webp": maisPaginas05,
+  "mais-paginas-06.webp": maisPaginas06,
+  "mais-paginas-07.webp": maisPaginas07,
+  "mais-paginas-08.webp": maisPaginas08,
+  "mais-paginas-09.webp": maisPaginas09,
+  "mais-paginas-10.webp": maisPaginas10,
+  "feedback-01.webp": feedback01,
+  "feedback-02.webp": feedback02,
+  "feedback-03.webp": feedback03,
+  "feedback-04.webp": feedback04,
+  "feedback-05.webp": feedback05,
+  "feedback-06.webp": feedback06,
+  "feedback-07.webp": feedback07,
+  "feedback-08.webp": feedback08,
+  "feedback-09.webp": feedback09,
+  "feedback-10.webp": feedback10,
+  "selo-garantia-7-dias.webp": seloGarantia7Dias,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";

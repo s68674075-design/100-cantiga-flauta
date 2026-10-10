@@ -4,6 +4,8 @@ import { ArrowDown, ArrowRight, BookOpen, Check, ChevronDown, ChevronLeft, Chevr
 import { Button } from '@/components/ui/button';
 import { asset, materialAssets } from '@/lib/material-assets';
 
+const heroImage = asset('livroinfantilflautadoce');
+
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
     { title: '100 Cantigas Infantis para Flauta Doce — Cifras Kids' },
@@ -11,6 +13,8 @@ export const Route = createFileRoute('/')({
     { property: 'og:title', content: '100 Cantigas Infantis para Flauta Doce — Cifras Kids' },
     { property: 'og:description', content: 'Um jeito visual e divertido de aprender flauta doce. Material digital pronto para impressão, com 100 cantigas e três bônus no plano completo.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
+  ], links: [
+    { rel: 'preload', as: 'image', href: heroImage, fetchPriority: 'high' },
   ] }), component: Index,
 });
 
@@ -50,7 +54,7 @@ function Gallery({ names, onPreview, label, className = '' }: { names: string[];
   const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
   return <div className={`gallery ${className}`.trim()} aria-label={label}>
     <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
-      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
+      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" decoding="async" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;
@@ -79,7 +83,7 @@ function Index() {
     <div className="sale-bar">⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE {today}</div>
     <section className="hero">
       <h1>100 <span>cantigas infantis</span> para crianças aprender <span>flauta doce</span> de forma <span>fácil e divertida</span> prontas para impressão</h1>
-      <img className="hero-product" src="https://lh3.googleusercontent.com/d/1waRrmJy2g8Uh1I_WXJYSj13zOFad4gSJ" alt="100 Cantigas Infantis para Flauta Doce: capa e páginas com dedilhados e notas coloridas" fetchPriority="high" />
+      <img className="hero-product" src={heroImage} width={577} height={433} alt="100 Cantigas Infantis para Flauta Doce: capa e páginas com dedilhados e notas coloridas" fetchPriority="high" decoding="async" />
       <div className="hero-details"><p className="intro-line"><Music2 size={22} /><span>Um material completo com canções divertidas para a criança tocar suas primeiras músicas na flauta doce em 15 minutos.</span></p>
         <CheckList items={['Cantigas divertidas com cifras melódicas simples, desenhos dos dedilhados e partituras coloridas', 'Para flauta doce soprano germânica e barroca com digitação completa', 'Material 100% digital e pronto para impressão']} />
         <CTA>ACESSAR AGORA</CTA>
@@ -107,7 +111,7 @@ function Index() {
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Já pensou em ver a criança tocando na flauta doce <span>as cantigas que ela ama?</span></h2>
       <p className="section-caption">Sem um começo confuso e cheio de teoria.</p>
-      <img className="children-image" loading="lazy" src={asset('criancastocandoflautadoce')} alt="Criança tocando flauta doce" />
+      <img className="children-image" loading="lazy" decoding="async" width={577} height={433} src={asset('criancastocandoflautadoce')} alt="Criança tocando flauta doce" />
       <div className="comparison"><CheckList negative items={['A criança perde o interesse quando o aprendizado começa com teoria demais e pouca prática.', 'As notas e os dedilhados parecem confusos quando não há um apoio visual claro.', 'Você quer incentivar a música em casa ou na aula, mas não sabe qual sequência seguir.', 'Partituras tradicionais podem assustar antes mesmo de tocar uma música conhecida.']} /><CheckList items={['Começar por 100 cantigas que a criança já conhece e tem vontade de tocar.', 'Ler o nome das notas nas cifras melódicas sem depender só da partitura tradicional.', 'Visualizar quais furos cobrir em cada nota com os desenhos dos dedilhados.', 'Associar notas, cores e posições dos dedos de forma leve e progressiva.']} /></div>
       <CTA>QUERO FACILITAR ESSE APRENDIZADO</CTA>
     </div></section>
@@ -122,23 +126,23 @@ function Index() {
     </div></section>
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Tudo o que você <span>vai receber</span></h2><p className="section-caption"><Zap className="inline size-4 text-primary" /> Acesso imediato</p>
-      <img className="receive-image" loading="lazy" src={asset('livroinfantilflautadoce')} alt="Livro infantil de canções para flauta doce" />
+      <img className="receive-image" loading="lazy" decoding="async" width={577} height={433} src={asset('livroinfantilflautadoce')} alt="Livro infantil de canções para flauta doce" />
       <div className="receive-list"><CheckList items={['PDF principal com 203 páginas e 100 cantigas infantis para flauta doce', 'Cifras melódicas com a sequência das notas de cada música', 'Desenhos dos dedilhados para visualizar quais furos cobrir', 'Partituras coloridas e versões em preto e branco para imprimir', 'Material digital organizado para consultar e praticar no seu ritmo']} /></div>
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">O plano completo entrega <span>ainda mais</span></h2><p className="section-caption">Você também vai receber <strong>3 bônus</strong> para construir uma base mais completa na flauta doce.</p>
-      <div className="bonus-grid">{bonuses.map((bonus, i) => <article className="bonus-card" key={bonus.title}><span className="bonus-label">Bônus {i + 1}</span><img loading="lazy" src={asset(bonus.image)} alt={bonus.title} /><h3>{bonus.title}</h3><p className="subtitle">({bonus.subtitle})</p><CheckList items={bonus.points} /><p className="bonus-value">Valor: <s>R${bonus.price}</s> <ArrowRight className="inline size-4 mx-2" /><strong>Grátis</strong></p></article>)}</div>
+      <div className="bonus-grid">{bonuses.map((bonus, i) => <article className="bonus-card" key={bonus.title}><span className="bonus-label">Bônus {i + 1}</span><img loading="lazy" decoding="async" src={asset(bonus.image)} alt={bonus.title} /><h3>{bonus.title}</h3><p className="subtitle">({bonus.subtitle})</p><CheckList items={bonus.points} /><p className="bonus-value">Valor: <s>R${bonus.price}</s> <ArrowRight className="inline size-4 mx-2" /><strong>Grátis</strong></p></article>)}</div>
     </div></section>
     <section className="page-section" id="planos"><div className="section-inner">
       <p className="offer-eyebrow">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</p><h2 className="section-title">Tenha o <span>plano completo</span></h2>
       <div className="plans-grid single-plan">
-        <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 3 Bônus</h3><img loading="lazy" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e três bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="special-price-label">Precio especial de hoy</p><p className="old-price">de <s>US$ 27</s> por:</p><p className="plan-price"><small>US$</small>9</p><p className="savings">¡Ahorras (67% de descuento)!</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
+        <article className="plan-card featured"><div className="plan-heading">★ PLANO COMPLETO</div><div className="plan-body"><h3>100 Cantigas + 3 Bônus</h3><img loading="lazy" decoding="async" src={asset('pacotecompleto')} alt="Plano Completo com 100 cantigas e três bônus" /><p className="text-primary text-xs font-black"><Sparkles className="inline size-4" /> MATERIAL COMPLETO</p><CheckList items={['PDF com 100 cantigas para flauta doce soprano', 'Cifras melódicas com dedilhados, partituras coloridas + preto e branco', ...bonuses.map((b, i) => `Bônus ${i + 1} — ${b.title}`)]} /><p className="special-price-label">Precio especial de hoy</p><p className="old-price">de <s>US$ 27</s> por:</p><p className="plan-price"><small>US$</small>9</p><p className="savings">¡Ahorras (67% de descuento)!</p><Button asChild className="purchase-cta"><a href="https://pay.wiapy.com/1DKkkGNq63V4" target="_blank" rel="noopener noreferrer"><ArrowRight />QUERO O PLANO COMPLETO</a></Button></div></article>
       </div><img className="trust-image" loading="lazy" src={asset('trust')} alt="Compra segura" />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">Veja o que estão dizendo <span>sobre o material</span></h2><p className="section-caption">Feedbacks de quem buscou um jeito mais visual e prático de apresentar a flauta doce às crianças.</p><Gallery className="feedback-gallery" names={feedbackImages} onPreview={setPreview} label="Feedback sobre o material infantil de flauta doce" /><div className="review-score" aria-label="5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="review-count">(1723 avaliações)</p><CTA>QUERO GARANTIR AS 100 CANTIGAS</CTA>
     </div></section>
-    <section className="page-section"><div className="guarantee-layout"><img loading="lazy" src={asset('selo-garantia-7-dias')} alt="Selo dourado de garantia de 7 dias" /><div><p className="text-primary font-extrabold"><ShieldCheck className="inline size-4" /> Risco zero para você</p><h2 className="section-title">Garantia de <span>7 dias</span><br /> satisfação ou reembolso</h2><p>Você não precisa comprar no escuro.</p><p>Após a compra, você tem 7 dias para acessar os PDFs, escolher algumas cantigas, testar o material na flauta doce e ver se ele faz sentido para a sua rotina.</p><p>Se por qualquer motivo você sentir que não era o que precisava, basta solicitar o reembolso dentro desse prazo.</p><p><strong>Sem burocracia. Sem dor de cabeça. Sem complicação.</strong></p><p>O risco fica com a gente para você explorar as cifras, os dedilhados e as partituras com tranquilidade.</p></div></div></section>
+    <section className="page-section"><div className="guarantee-layout"><img loading="lazy" decoding="async" width={1312} height={1199} src={asset('selo-garantia-7-dias')} alt="Selo dourado de garantia de 7 dias" /><div><p className="text-primary font-extrabold"><ShieldCheck className="inline size-4" /> Risco zero para você</p><h2 className="section-title">Garantia de <span>7 dias</span><br /> satisfação ou reembolso</h2><p>Você não precisa comprar no escuro.</p><p>Após a compra, você tem 7 dias para acessar os PDFs, escolher algumas cantigas, testar o material na flauta doce e ver se ele faz sentido para a sua rotina.</p><p>Se por qualquer motivo você sentir que não era o que precisava, basta solicitar o reembolso dentro desse prazo.</p><p><strong>Sem burocracia. Sem dor de cabeça. Sem complicação.</strong></p><p>O risco fica com a gente para você explorar as cifras, os dedilhados e as partituras com tranquilidade.</p></div></div></section>
     <section className="page-section soft-section"><div className="section-inner"><h2 className="section-title">Perguntas <span>frequentes</span></h2><div className="faq-list">{faqs.map(([question, answer], i) => <div className="faq-item" key={question}><Button id={`faq-question-${i}`} aria-expanded={openFaq === i} aria-controls={`faq-answer-${i}`} variant="ghost" className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>{question}<ChevronDown /></Button>{openFaq === i && <div id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`} className="faq-answer">{answer}</div>}</div>)}</div></div></section>
     <footer className="site-footer"><LockKeyhole className="inline size-3 mr-1" />Copyright © 2026 | Cifras Kids</footer>
     {preview && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Página do material ampliada" onClick={() => setPreview(null)}><Button ref={closeRef} variant="outline" size="icon" className="lightbox-close" aria-label="Fechar prévia" onClick={() => setPreview(null)}><X /></Button><img src={preview} alt="Página do material ampliada" onClick={e => e.stopPropagation()} /></div>}
