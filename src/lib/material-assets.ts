@@ -54,7 +54,7 @@ import asset51 from "@/assets/b5escalaseacordes-DBdd4mAt.webp.asset.json";
 import asset52 from "@/assets/b6certificado-BlMZ8rey.webp.asset.json";
 import asset53 from "@/assets/pacotebasico-XxDeOEx5.webp.asset.json";
 import asset54 from "@/assets/escassez-7yxr_wfr.webp.asset.json";
-import asset55 from "@/assets/pacotecompleto-PbR5TjGX.webp.asset.json";
+import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.png";
 import asset56 from "@/assets/trust-CiqvnMrT.webp.asset.json";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
@@ -146,7 +146,7 @@ export const materialAssets: Record<string, string> = {
   "b6certificado-BlMZ8rey.webp": asset52.url,
   "pacotebasico-XxDeOEx5.webp": asset53.url,
   "escassez-7yxr_wfr.webp": asset54.url,
-  "pacotecompleto-PbR5TjGX.webp": asset55.url,
+  "pacotecompleto.png": pacotecompleto,
   "trust-CiqvnMrT.webp": asset56.url,
   "feedb1-BSTDy1X_.webp": asset57.url,
   "garantia15dias-xBbq_3xB.webp": asset58.url,
