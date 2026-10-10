@@ -124,7 +124,7 @@ function Index() {
     </div></section>
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Tudo o que você <span>vai receber</span></h2><p className="section-caption"><Zap className="inline size-4 text-primary" /> Acesso imediato</p>
-      <img className="receive-image" loading="lazy" src={asset('heromockup')} alt="Material principal com 100 cantigas infantis para flauta doce" />
+      <img className="receive-image" loading="lazy" src={asset('livroinfantilflautadoce')} alt="Livro infantil de canções para flauta doce" />
       <div className="receive-list"><CheckList items={['PDF principal com 203 páginas e 100 cantigas infantis para flauta doce', 'Cifras melódicas com a sequência das notas de cada música', 'Desenhos dos dedilhados para visualizar quais furos cobrir', 'Partituras coloridas e versões em preto e branco para imprimir', 'Material digital organizado para consultar e praticar no seu ritmo']} /></div>
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">

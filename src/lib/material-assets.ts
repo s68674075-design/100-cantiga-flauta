@@ -58,6 +58,7 @@ import asset56 from "@/assets/trust-CiqvnMrT.webp.asset.json";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
 import garantia7dias from "@/assets/garantia7dias.svg";
+import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.png";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -120,5 +121,6 @@ export const materialAssets: Record<string, string> = {
   "feedb1-BSTDy1X_.webp": asset57.url,
   "garantia15dias-xBbq_3xB.webp": asset58.url,
   "garantia7dias.svg": garantia7dias,
+  "livroinfantilflautadoce.png": livroinfantilflautadoce,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";
