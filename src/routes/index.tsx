@@ -15,7 +15,7 @@ export const Route = createFileRoute('/')({
 });
 
 const allNames = Object.keys(materialAssets);
-const melodicPages = allNames.slice(3, 17);
+const insidePages = allNames.filter(n => n.startsWith('pagina-dentro'));
 const scorePages = allNames.slice(17, 31);
 const morePages = allNames.filter(n => n.startsWith('100_Cantigas'));
 const bonuses = [
@@ -87,7 +87,7 @@ function Index() {
     <Timer />
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Veja algumas páginas <span>por dentro</span></h2>
-      <Gallery names={melodicPages} onPreview={setPreview} label="Cifras melódicas e dedilhados" />
+      <Gallery names={insidePages} onPreview={setPreview} label="Cifras melódicas e dedilhados" />
       <p className="section-caption">Tudo já vem organizado para você <strong>baixar, imprimir e começar a praticar na flauta doce</strong> sem perder tempo montando atividades do zero.</p>
       <div className="workflow"><div className="workflow-item"><Download />Baixa</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Printer />Imprime</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Music2 />Toca e aprende brincando!</div></div>
       <CTA />

@@ -60,6 +60,16 @@ import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
 import garantia7dias from "@/assets/garantia7dias.svg";
 import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.png";
+import paginaDentro01 from "@/assets/pagina-dentro-01.jpeg";
+import paginaDentro02 from "@/assets/pagina-dentro-02.jpeg";
+import paginaDentro03 from "@/assets/pagina-dentro-03.jpeg";
+import paginaDentro04 from "@/assets/pagina-dentro-04.jpeg";
+import paginaDentro05 from "@/assets/pagina-dentro-05.jpeg";
+import paginaDentro06 from "@/assets/pagina-dentro-06.jpeg";
+import paginaDentro07 from "@/assets/pagina-dentro-07.jpeg";
+import paginaDentro08 from "@/assets/pagina-dentro-08.jpeg";
+import paginaDentro09 from "@/assets/pagina-dentro-09.jpeg";
+import paginaDentro10 from "@/assets/pagina-dentro-10.jpeg";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -124,5 +134,15 @@ export const materialAssets: Record<string, string> = {
   "garantia15dias-xBbq_3xB.webp": asset58.url,
   "garantia7dias.svg": garantia7dias,
   "livroinfantilflautadoce.png": livroinfantilflautadoce,
+  "pagina-dentro-01.jpeg": paginaDentro01,
+  "pagina-dentro-02.jpeg": paginaDentro02,
+  "pagina-dentro-03.jpeg": paginaDentro03,
+  "pagina-dentro-04.jpeg": paginaDentro04,
+  "pagina-dentro-05.jpeg": paginaDentro05,
+  "pagina-dentro-06.jpeg": paginaDentro06,
+  "pagina-dentro-07.jpeg": paginaDentro07,
+  "pagina-dentro-08.jpeg": paginaDentro08,
+  "pagina-dentro-09.jpeg": paginaDentro09,
+  "pagina-dentro-10.jpeg": paginaDentro10,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";
