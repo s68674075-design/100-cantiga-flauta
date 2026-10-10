@@ -88,6 +88,16 @@ import maisPaginas07 from "@/assets/mais-paginas-07.jpeg";
 import maisPaginas08 from "@/assets/mais-paginas-08.jpeg";
 import maisPaginas09 from "@/assets/mais-paginas-09.jpeg";
 import maisPaginas10 from "@/assets/mais-paginas-10.jpeg";
+import feedback01 from "@/assets/feedback-01.png";
+import feedback02 from "@/assets/feedback-02.png";
+import feedback03 from "@/assets/feedback-03.png";
+import feedback04 from "@/assets/feedback-04.png";
+import feedback05 from "@/assets/feedback-05.png";
+import feedback06 from "@/assets/feedback-06.png";
+import feedback07 from "@/assets/feedback-07.png";
+import feedback08 from "@/assets/feedback-08.png";
+import feedback09 from "@/assets/feedback-09.png";
+import feedback10 from "@/assets/feedback-10.png";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -180,5 +190,15 @@ export const materialAssets: Record<string, string> = {
   "mais-paginas-08.jpeg": maisPaginas08,
   "mais-paginas-09.jpeg": maisPaginas09,
   "mais-paginas-10.jpeg": maisPaginas10,
+  "feedback-01.png": feedback01,
+  "feedback-02.png": feedback02,
+  "feedback-03.png": feedback03,
+  "feedback-04.png": feedback04,
+  "feedback-05.png": feedback05,
+  "feedback-06.png": feedback06,
+  "feedback-07.png": feedback07,
+  "feedback-08.png": feedback08,
+  "feedback-09.png": feedback09,
+  "feedback-10.png": feedback10,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";

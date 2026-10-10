@@ -18,6 +18,7 @@ const allNames = Object.keys(materialAssets);
 const insidePages = allNames.filter(n => n.startsWith('pagina-dentro'));
 const partiturasPages = allNames.filter(n => n.startsWith('partituras'));
 const morePages = allNames.filter(n => n.startsWith('mais-paginas'));
+const feedbackImages = allNames.filter(n => n.startsWith('feedback-'));
 const bonuses = [
   { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '27' },
   { image: 'b2', title: 'Guia Visual de Dedilhados', subtitle: 'As posições das notas em uma consulta rápida', points: ['Mostra as posições das notas na flauta germânica', 'Inclui também os dedilhados da flauta barroca', 'Reúne notas naturais e alteradas em tabelas visuais', 'Facilita a consulta das posições durante cada prática'], price: '27' },
@@ -43,11 +44,11 @@ function CTA({ children = 'QUERO AS 100 CANTIGAS' }: { children?: ReactNode }) {
 }function CheckList({ items, negative = false }: { items: string[]; negative?: boolean }) {
   return <ul className={`check-list ${negative ? 'negative' : ''}`}>{items.map(item => <li key={item}>{negative ? <X /> : <Check />}<span>{item}</span></li>)}</ul>;
 }
-function Gallery({ names, onPreview, label }: { names: string[]; onPreview: (url: string) => void; label: string }) {
+function Gallery({ names, onPreview, label, className = '' }: { names: string[]; onPreview: (url: string) => void; label: string; className?: string }) {
   const track = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(1);
   const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
-  return <div className="gallery" aria-label={label}>
+  return <div className={`gallery ${className}`.trim()} aria-label={label}>
     <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
       {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialAssets[name]; if (url) onPreview(url); }}><img loading="lazy" src={materialAssets[name]} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
@@ -135,7 +136,7 @@ function Index() {
       </div><img className="trust-image" loading="lazy" src={asset('trust')} alt="Compra segura" />
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
-      <h2 className="section-title">Veja o que estão dizendo <span>sobre o material</span></h2><p className="section-caption">Feedbacks de quem buscou um jeito mais visual e prático de apresentar a flauta doce às crianças.</p><img className="feedback-image" loading="lazy" src={asset('feedb1')} alt="Feedback sobre o material infantil de flauta doce" /><div className="review-score" aria-label="5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="review-count">(1723 avaliações)</p><CTA>QUERO GARANTIR AS 100 CANTIGAS</CTA>
+      <h2 className="section-title">Veja o que estão dizendo <span>sobre o material</span></h2><p className="section-caption">Feedbacks de quem buscou um jeito mais visual e prático de apresentar a flauta doce às crianças.</p><Gallery className="feedback-gallery" names={feedbackImages} onPreview={setPreview} label="Feedback sobre o material infantil de flauta doce" /><div className="review-score" aria-label="5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} className="size-4 fill-current" />)}</div><p className="review-count">(1723 avaliações)</p><CTA>QUERO GARANTIR AS 100 CANTIGAS</CTA>
     </div></section>
     <section className="page-section"><div className="guarantee-layout"><img loading="lazy" src={asset('garantia7')} alt="Selo de garantia de 7 dias" /><div><p className="text-primary font-extrabold"><ShieldCheck className="inline size-4" /> Risco zero para você</p><h2 className="section-title">Garantia de <span>7 dias</span><br /> satisfação ou reembolso</h2><p>Você não precisa comprar no escuro.</p><p>Após a compra, você tem 7 dias para acessar os PDFs, escolher algumas cantigas, testar o material na flauta doce e ver se ele faz sentido para a sua rotina.</p><p>Se por qualquer motivo você sentir que não era o que precisava, basta solicitar o reembolso dentro desse prazo.</p><p><strong>Sem burocracia. Sem dor de cabeça. Sem complicação.</strong></p><p>O risco fica com a gente para você explorar as cifras, os dedilhados e as partituras com tranquilidade.</p></div></div></section>
     <section className="page-section soft-section"><div className="section-inner"><h2 className="section-title">Perguntas <span>frequentes</span></h2><div className="faq-list">{faqs.map(([question, answer], i) => <div className="faq-item" key={question}><Button id={`faq-question-${i}`} aria-expanded={openFaq === i} aria-controls={`faq-answer-${i}`} variant="ghost" className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>{question}<ChevronDown /></Button>{openFaq === i && <div id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`} className="faq-answer">{answer}</div>}</div>)}</div></div></section>

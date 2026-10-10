@@ -130,7 +130,9 @@ h1,h2,h3,p { margin: 0; }
 .special-price-label { font-size: 13px; font-weight: 900; color: var(--sale); margin-bottom: 6px; }
 .savings { font-size: 12px; color: var(--primary); font-weight: 800; margin: 14px 0 18px; }
 .trust-image { width: 280px; height: 48px; object-fit: contain; margin: 0 auto; display: block; }
-.feedback-image { width: 430px; height: auto; max-width: 100%; margin: 25px auto 20px; display: block; border-radius: 6px; }
+.feedback-gallery { max-width: 760px; margin: 25px auto 20px; }
+.feedback-gallery .preview-button { flex: 0 0 calc((100% - 36px)/3); }
+.feedback-gallery .preview-button img { aspect-ratio: 941 / 1672; object-fit: contain; background: var(--background); }
 .review-score { display: flex; justify-content: center; gap: 4px; color: var(--gold); margin-bottom: 7px; }
 .review-count { font-size: 12px; color: var(--muted-foreground); text-align: center; margin-bottom: 24px; }
 .guarantee-layout { display: flex; gap: 45px; align-items: center; max-width: 800px; margin: 0 auto; }
@@ -159,6 +161,7 @@ h1,h2,h3,p { margin: 0; }
   .page-section { padding: 42px 20px; }
   .section-title { font-size: 24px; }
   .preview-button { flex-basis: calc((100% - 18px)/2); }
+  .feedback-gallery .preview-button { flex-basis: calc((100% - 18px)/2); }
   .method-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
   .comparison,.audience-grid,.plans-grid { grid-template-columns: 1fr; gap: 20px; }
   .bonus-grid { grid-template-columns: 1fr; }
