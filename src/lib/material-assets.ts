@@ -54,6 +54,7 @@ import asset54 from "@/assets/escassez-7yxr_wfr.webp.asset.json";
 import pacotecompleto from "@/assets/tudoquevocereceberkitmusicalinfantil.webp";
 import asset57 from "@/assets/feedb1-BSTDy1X_.webp.asset.json";
 import asset58 from "@/assets/garantia15dias-xBbq_3xB.webp.asset.json";
+import imagem from "@/assets/image.webp";
 import garantia7dias from "@/assets/garantia7dias.svg";
 import livroinfantilflautadoce from "@/assets/livroinfantilflautadoce.webp";
 import paginaDentro01 from "@/assets/pagina-dentro-01.webp";
@@ -232,6 +233,7 @@ export const materialAssets: Record<string, string> = {
   "feedback-09.webp": feedback09,
   "feedback-10.webp": feedback10,
   "selo-garantia-7-dias.webp": seloGarantia7Dias,
+  "image.webp": imagem,
 };
 export const materialFullAssets: Record<string, string> = {
   "feedback-01.webp": feedback01Lg,

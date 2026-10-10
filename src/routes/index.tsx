@@ -129,6 +129,7 @@ function Index() {
     <section className="hero">
       <h1>100 <span>cantigas infantis</span> para crianças aprender <span>flauta doce</span> de forma <span>fácil e divertida</span> prontas para impressão</h1>
       <img className="hero-product" src={heroImage} width={577} height={433} alt="100 Cantigas Infantis para Flauta Doce: capa e páginas com dedilhados e notas coloridas" fetchPriority="high" decoding="async" />
+      <img className="hero-product" src={asset('image')} width={577} height={433} alt="Imagem do material" fetchPriority="high" decoding="async" />
       <div className="hero-details"><p className="intro-line"><Music2 size={22} /><span>Um material completo com canções divertidas para a criança tocar suas primeiras músicas na flauta doce em 15 minutos.</span></p>
         <CheckList items={['Cantigas divertidas com cifras melódicas simples, desenhos dos dedilhados e partituras coloridas', 'Para flauta doce soprano germânica e barroca com digitação completa', 'Material 100% digital e pronto para impressão']} />
         <CTA>ACESSAR AGORA</CTA>
