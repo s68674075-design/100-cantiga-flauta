@@ -98,6 +98,7 @@ import feedback07 from "@/assets/feedback-07.png";
 import feedback08 from "@/assets/feedback-08.png";
 import feedback09 from "@/assets/feedback-09.png";
 import feedback10 from "@/assets/feedback-10.png";
+import seloGarantia7Dias from "@/assets/selo-garantia-7-dias.png";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -200,5 +201,6 @@ export const materialAssets: Record<string, string> = {
   "feedback-08.png": feedback08,
   "feedback-09.png": feedback09,
   "feedback-10.png": feedback10,
+  "selo-garantia-7-dias.png": seloGarantia7Dias,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";
