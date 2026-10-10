@@ -78,6 +78,16 @@ import partituras05 from "@/assets/partituras-05.jpeg";
 import partituras06 from "@/assets/partituras-06.jpeg";
 import partituras07 from "@/assets/partituras-07.jpeg";
 import partituras08 from "@/assets/partituras-08.jpeg";
+import maisPaginas01 from "@/assets/mais-paginas-01.jpeg";
+import maisPaginas02 from "@/assets/mais-paginas-02.jpeg";
+import maisPaginas03 from "@/assets/mais-paginas-03.jpeg";
+import maisPaginas04 from "@/assets/mais-paginas-04.jpeg";
+import maisPaginas05 from "@/assets/mais-paginas-05.jpeg";
+import maisPaginas06 from "@/assets/mais-paginas-06.jpeg";
+import maisPaginas07 from "@/assets/mais-paginas-07.jpeg";
+import maisPaginas08 from "@/assets/mais-paginas-08.jpeg";
+import maisPaginas09 from "@/assets/mais-paginas-09.jpeg";
+import maisPaginas10 from "@/assets/mais-paginas-10.jpeg";
 
 export const materialAssets: Record<string, string> = {
   "heromockup-Do0EMyqV.webp": asset0.url,
@@ -160,5 +170,15 @@ export const materialAssets: Record<string, string> = {
   "partituras-06.jpeg": partituras06,
   "partituras-07.jpeg": partituras07,
   "partituras-08.jpeg": partituras08,
+  "mais-paginas-01.jpeg": maisPaginas01,
+  "mais-paginas-02.jpeg": maisPaginas02,
+  "mais-paginas-03.jpeg": maisPaginas03,
+  "mais-paginas-04.jpeg": maisPaginas04,
+  "mais-paginas-05.jpeg": maisPaginas05,
+  "mais-paginas-06.jpeg": maisPaginas06,
+  "mais-paginas-07.jpeg": maisPaginas07,
+  "mais-paginas-08.jpeg": maisPaginas08,
+  "mais-paginas-09.jpeg": maisPaginas09,
+  "mais-paginas-10.jpeg": maisPaginas10,
 };
 export const asset = (prefix: string) => materialAssets[Object.keys(materialAssets).find(name => name.startsWith(prefix)) ?? ""] ?? "";

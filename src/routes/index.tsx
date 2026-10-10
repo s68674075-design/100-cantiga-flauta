@@ -17,7 +17,7 @@ export const Route = createFileRoute('/')({
 const allNames = Object.keys(materialAssets);
 const insidePages = allNames.filter(n => n.startsWith('pagina-dentro'));
 const partiturasPages = allNames.filter(n => n.startsWith('partituras'));
-const morePages = allNames.filter(n => n.startsWith('100_Cantigas'));
+const morePages = allNames.filter(n => n.startsWith('mais-paginas'));
 const bonuses = [
   { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '27' },
   { image: 'b2', title: 'Guia Visual de Dedilhados', subtitle: 'As posições das notas em uma consulta rápida', points: ['Mostra as posições das notas na flauta germânica', 'Inclui também os dedilhados da flauta barroca', 'Reúne notas naturais e alteradas em tabelas visuais', 'Facilita a consulta das posições durante cada prática'], price: '27' },
