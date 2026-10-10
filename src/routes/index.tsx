@@ -54,7 +54,12 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
-  const move = (direction: number) => track.current?.scrollBy({ left: direction * track.current.clientWidth, behavior: 'smooth' });
+  const cardStep = (el: HTMLElement) => {
+    const first = el.firstElementChild as HTMLElement | null;
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    return (first?.offsetWidth ?? el.scrollWidth / names.length) + gap;
+  };
+  const move = (direction: number) => { const el = track.current; if (el) el.scrollBy({ left: direction * cardStep(el), behavior: 'smooth' }); };
   useEffect(() => {
     const el = root.current;
     if (!el || ready) return;
@@ -65,25 +70,24 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   }, [ready]);
   useEffect(() => {
     if (!autoDirection || paused) return;
-    if (typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const id = window.setInterval(() => {
       const el = track.current;
       if (!el) return;
       const max = el.scrollWidth - el.clientWidth;
       if (max <= 0) return;
-      const step = el.scrollWidth / names.length;
+      const step = cardStep(el);
       if (autoDirection > 0) {
-        if (el.scrollLeft >= max - 4) el.scrollTo({ left: 0, behavior: 'smooth' });
+        if (el.scrollLeft >= max - step / 2) el.scrollTo({ left: 0, behavior: 'smooth' });
         else el.scrollBy({ left: step, behavior: 'smooth' });
       } else {
-        if (el.scrollLeft <= 4) el.scrollTo({ left: max, behavior: 'smooth' });
+        if (el.scrollLeft <= step / 2) el.scrollTo({ left: max, behavior: 'smooth' });
         else el.scrollBy({ left: -step, behavior: 'smooth' });
       }
     }, 3200);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
   return <div ref={root} className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
-    <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / (el.scrollWidth / names.length)) + 1)); }}>
+    <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / cardStep(el)) + 1)); }}>
       {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready ? 'eager' : 'lazy'} fetchPriority="low" decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${i + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
