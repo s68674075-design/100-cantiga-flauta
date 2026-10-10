@@ -54,12 +54,24 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
+  const items = autoDirection ? Array.from({ length: 3 }, () => names).flat() : names;
   const cardStep = (el: HTMLElement) => {
     const first = el.firstElementChild as HTMLElement | null;
     const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    return (first?.offsetWidth ?? el.scrollWidth / names.length) + gap;
+    return (first?.offsetWidth ?? el.scrollWidth / items.length) + gap;
   };
-  const move = (direction: number) => { const el = track.current; if (el) el.scrollBy({ left: direction * cardStep(el), behavior: 'smooth' }); };
+  const setWidth = (el: HTMLElement) => cardStep(el) * names.length;
+  const move = (direction: number) => {
+    const el = track.current;
+    if (!el) return;
+    const st = cardStep(el);
+    const sw = setWidth(el);
+    if (autoDirection && sw > 0) {
+      if (direction > 0 && el.scrollLeft >= sw) el.scrollLeft -= sw;
+      else if (direction < 0 && el.scrollLeft <= st * 0.5) el.scrollLeft += sw;
+    }
+    el.scrollBy({ left: direction * st, behavior: 'smooth' });
+  };
   useEffect(() => {
     const el = root.current;
     if (!el || ready) return;
@@ -69,26 +81,25 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
     return () => io.disconnect();
   }, [ready]);
   useEffect(() => {
+    if (!autoDirection) return;
+    const el = track.current;
+    if (el) el.scrollLeft = autoDirection > 0 ? 0 : setWidth(el);
+  }, [autoDirection, ready, names.length]);
+  useEffect(() => {
     if (!autoDirection || paused) return;
-    const id = window.setInterval(() => {
-      const el = track.current;
-      if (!el) return;
-      const max = el.scrollWidth - el.clientWidth;
-      if (max <= 0) return;
-      const step = cardStep(el);
-      if (autoDirection > 0) {
-        if (el.scrollLeft >= max - step / 2) el.scrollTo({ left: 0, behavior: 'smooth' });
-        else el.scrollBy({ left: step, behavior: 'smooth' });
-      } else {
-        if (el.scrollLeft <= step / 2) el.scrollTo({ left: max, behavior: 'smooth' });
-        else el.scrollBy({ left: -step, behavior: 'smooth' });
-      }
-    }, 3200);
+    const id = window.setInterval(() => move(autoDirection), 1600);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
+  const onScroll = () => {
+    const el = track.current;
+    if (!el) return;
+    const sw = setWidth(el);
+    const local = sw > 0 ? (((el.scrollLeft % sw) + sw) % sw) : el.scrollLeft;
+    setPosition(Math.min(names.length, Math.round(local / cardStep(el)) + 1));
+  };
   return <div ref={root} className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
-    <div className="gallery-track" ref={track} onScroll={() => { const el = track.current; if (el) setPosition(Math.min(names.length, Math.round(el.scrollLeft / cardStep(el)) + 1)); }}>
-      {names.map((name, i) => <Button key={name} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${i + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready ? 'eager' : 'lazy'} fetchPriority="low" decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${i + 1}`} /></Button>)}
+    <div className="gallery-track" ref={track} style={autoDirection ? { scrollSnapType: 'none' } : undefined} onScroll={onScroll}>
+      {items.map((name, i) => <Button key={`${name}-${i}`} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${(i % names.length) + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready ? 'eager' : 'lazy'} fetchPriority="low" decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${(i % names.length) + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Próximas páginas: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;
