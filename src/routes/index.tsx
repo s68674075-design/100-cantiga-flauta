@@ -53,7 +53,6 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   const track = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
-  const [ready, setReady] = useState(false);
   const items = names;
   const cardStep = (el: HTMLElement) => {
     const first = el.firstElementChild as HTMLElement | null;
@@ -73,21 +72,13 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
     el.scrollBy({ left: direction * st, behavior: 'smooth' });
   };
   useEffect(() => {
-    const el = root.current;
-    if (!el || ready) return;
-    if (typeof IntersectionObserver === 'undefined') { setReady(true); return; }
-    const io = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting)) { setReady(true); io.disconnect(); } }, { rootMargin: '900px 0px' });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [ready]);
-  useEffect(() => {
     if (!autoDirection) return;
     const el = track.current;
     if (el) el.scrollLeft = autoDirection > 0 ? 0 : setWidth(el);
-  }, [autoDirection, ready, names.length]);
+  }, [autoDirection, names.length]);
   useEffect(() => {
     if (!autoDirection || paused) return;
-    const id = window.setInterval(() => move(autoDirection), 2400);
+    const id = window.setInterval(() => move(autoDirection), 1500);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
   const onScroll = () => {
@@ -99,7 +90,7 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   };
   return <div ref={root} className={`gallery ${className}`.trim()} aria-label={label} onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)} onFocusCapture={() => setPaused(true)} onBlurCapture={() => setPaused(false)} onTouchStart={() => setPaused(true)} onTouchEnd={() => setPaused(false)}>
     <div className="gallery-track" ref={track} style={autoDirection ? { scrollSnapType: 'none' } : undefined} onScroll={onScroll}>
-      {items.map((name, i) => <Button key={`${name}-${i}`} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${(i % names.length) + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={ready && i < 4 ? 'eager' : 'lazy'} fetchPriority={i < 4 ? 'high' : 'low'} decoding="async" src={ready ? materialAssets[name] : undefined} alt={`${label} — página ${(i % names.length) + 1}`} /></Button>)}
+      {items.map((name, i) => <Button key={`${name}-${i}`} variant="ghost" className="preview-button" aria-label={`Ampliar ${label.toLowerCase()} ${(i % names.length) + 1}`} onClick={() => { const url = materialFullAssets[name] ?? materialAssets[name]; if (url) onPreview(url); }}><img loading={i < 4 ? 'eager' : 'lazy'} fetchPriority={i < 4 ? 'high' : 'low'} decoding="async" src={materialAssets[name]} alt={`${label} — página ${(i % names.length) + 1}`} /></Button>)}
     </div>
     <div className="gallery-nav"><Button variant="outline" size="icon" aria-label={`Páginas anteriores: ${label}`} onClick={() => move(-1)}><ChevronLeft /></Button><span>{position} / {names.length}</span><Button variant="outline" size="icon" aria-label={`Páginas siguientes: ${label}`} onClick={() => move(1)}><ChevronRight /></Button></div>
   </div>;
