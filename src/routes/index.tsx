@@ -24,9 +24,9 @@ const partiturasPages = allNames.filter(n => n.startsWith('partituras'));
 const morePages = allNames.filter(n => n.startsWith('mais-paginas'));
 const feedbackImages = allNames.filter(n => n.startsWith('feedback-'));
 const bonuses = [
-  { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '27' },
-  { image: 'b2', title: 'Guia Visual de Dedilhados', subtitle: 'As posições das notas em uma consulta rápida', points: ['Mostra as posições das notas na flauta germânica', 'Inclui também os dedilhados da flauta barroca', 'Reúne notas naturais e alteradas em tabelas visuais', 'Facilita a consulta das posições durante cada prática'], price: '27' },
-  { image: 'b3', title: 'Leitura de Partituras', subtitle: '30 páginas para entender a linguagem musical', points: ['Explica pauta, figuras, compassos, pausas e sinais de repetição', 'Apresenta notas, durações, ligaduras e sinais de alteração', 'Trabalha digitação, articulação, cifragem e compasso composto', 'Inclui propostas de criação e improvisação musical'], price: '27' },
+  { image: 'b1', title: 'Método Prático de Iniciação', subtitle: 'Material visual e animado para introdução', points: ['Apresenta o instrumento, a postura, a respiração e a emissão do som', 'Trabalha notas médias, graves e agudas de forma progressiva', 'Inclui exercícios, melodias, dinâmica e articulação', 'Traz escalas, arpejos, tabela de posições e atividades criativas'], price: '7' },
+  { image: 'b2', title: 'Guia Visual de Dedilhados', subtitle: 'As posições das notas em uma consulta rápida', points: ['Mostra as posições das notas na flauta germânica', 'Inclui também os dedilhados da flauta barroca', 'Reúne notas naturais e alteradas em tabelas visuais', 'Facilita a consulta das posições durante cada prática'], price: '7' },
+  { image: 'b3', title: 'Leitura de Partituras', subtitle: '30 páginas para entender a linguagem musical', points: ['Explica pauta, figuras, compassos, pausas e sinais de repetição', 'Apresenta notas, durações, ligaduras e sinais de alteração', 'Trabalha digitação, articulação, cifragem e compasso composto', 'Inclui propostas de criação e improvisação musical'], price: '7' },
 ];
 const faqs = [
   ['Como vou receber o material?', 'Após a confirmação da compra, você recebe o acesso aos arquivos digitais Acesso imediato por e-mail. O acesso é imediato.'],
@@ -176,7 +176,7 @@ function Index() {
     </div></section>
     <section className="page-section soft-section"><div className="section-inner">
       <h2 className="section-title">O plano completo entrega <span>ainda mais</span></h2><p className="section-caption">Você também vai receber <strong>3 bônus</strong> para construir uma base mais completa na flauta doce.</p>
-      <div className="bonus-grid">{bonuses.map((bonus, i) => <article className="bonus-card" key={bonus.title}><span className="bonus-label">Bônus {i + 1}</span><img loading="lazy" decoding="async" src={asset(bonus.image)} alt={bonus.title} /><h3>{bonus.title}</h3><p className="subtitle">({bonus.subtitle})</p><CheckList items={bonus.points} /><p className="bonus-value">Valor: <s>R${bonus.price}</s> <ArrowRight className="inline size-4 mx-2" /><strong>Grátis</strong></p></article>)}</div>
+      <div className="bonus-grid">{bonuses.map((bonus, i) => <article className="bonus-card" key={bonus.title}><span className="bonus-label">Bônus {i + 1}</span><img loading="lazy" decoding="async" src={asset(bonus.image)} alt={bonus.title} /><h3>{bonus.title}</h3><p className="subtitle">({bonus.subtitle})</p><CheckList items={bonus.points} /><p className="bonus-value">Valor: <s>US$ {bonus.price}</s> <ArrowRight className="inline size-4 mx-2" /><strong>Grátis</strong></p></article>)}</div>
     </div></section>
     <section className="page-section" id="planos"><div className="section-inner">
       <p className="offer-eyebrow">⏰ ÚLTIMA CHANCE — OFERTA TERMINA HOJE</p><h2 className="section-title">Tenha o <span>plano completo</span></h2>
