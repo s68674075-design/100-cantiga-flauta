@@ -53,7 +53,6 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
   const track = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(1);
   const [paused, setPaused] = useState(false);
-  const [ready, setReady] = useState(false);
   const items = names;
   const cardStep = (el: HTMLElement) => {
     const first = el.firstElementChild as HTMLElement | null;
@@ -73,21 +72,13 @@ function Gallery({ names, onPreview, label, className = '', autoDirection = 0 }:
     el.scrollBy({ left: direction * st, behavior: 'smooth' });
   };
   useEffect(() => {
-    const el = root.current;
-    if (!el || ready) return;
-    if (typeof IntersectionObserver === 'undefined') { setReady(true); return; }
-    const io = new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting)) { setReady(true); io.disconnect(); } }, { rootMargin: '900px 0px' });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [ready]);
-  useEffect(() => {
     if (!autoDirection) return;
     const el = track.current;
     if (el) el.scrollLeft = autoDirection > 0 ? 0 : setWidth(el);
-  }, [autoDirection, ready, names.length]);
+  }, [autoDirection, names.length]);
   useEffect(() => {
     if (!autoDirection || paused) return;
-    const id = window.setInterval(() => move(autoDirection), 2400);
+    const id = window.setInterval(() => move(autoDirection), 1500);
     return () => window.clearInterval(id);
   }, [autoDirection, paused, names.length]);
   const onScroll = () => {
