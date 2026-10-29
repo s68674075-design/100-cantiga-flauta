@@ -8,9 +8,9 @@ const heroImage = asset('livroinfantilflautadoce');
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
-    { title: '100 Cantigas Infantiles para Flauta Dulce — Cifras Kids' },
-    { name: 'description', content: '100 cantigas infantiles con cifras melódicas, dibujos de las digitaciones y partituras a color. Conoce el material, los tres bonos y los planes Cifras Kids.' },
-    { property: 'og:title', content: '100 Cantigas Infantiles para Flauta Dulce — Cifras Kids' },
+    { title: '100 Cantigas Infantiles para Flauta Dulce' },
+    { name: 'description', content: '100 cantigas infantiles con cifras melódicas, dibujos de las digitaciones y partituras a color. Conoce el material, los tres bonos y los planes del material completo.' },
+    { property: 'og:title', content: '100 Cantigas Infantiles para Flauta Dulce' },
     { property: 'og:description', content: 'Una forma visual y divertida de aprender flauta dulce. Material digital listo para imprimir, con 100 cantigas y tres bonos en el plan completo.' },
     { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
   ], links: [
