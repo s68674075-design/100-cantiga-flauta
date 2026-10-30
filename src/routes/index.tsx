@@ -127,7 +127,7 @@ function Index() {
     <Timer />
     <section className="page-section"><div className="section-inner">
       <h2 className="section-title">Mira algunas páginas <span>por dentro</span></h2>
-      <Gallery names={insidePages} onPreview={setPreview} label="Cifras melódicas y digitaciones" autoDirection={1} />
+      <Gallery names={insidePages} onPreview={setPreview} label="Notas con su nombre y digitaciones" autoDirection={1} />
       <p className="section-caption">Todo ya viene organizado para que <strong>descargues, imprimas y empieces a practicar con la flauta dulce</strong> sin perder tiempo preparando actividades desde cero.</p>
       <div className="workflow"><div className="workflow-item"><Download />Descarga</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Printer />Imprime</div><ArrowRight className="text-muted-foreground" /><div className="workflow-item"><Music2 />¡Toca y aprende jugando!</div></div>
       <CTA />
