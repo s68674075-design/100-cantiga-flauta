@@ -24,23 +24,22 @@ const partiturasPages = allNames.filter(n => n.startsWith('partituras'));
 const morePages = allNames.filter(n => n.startsWith('mais-paginas'));
 const feedbackImages = allNames.filter(n => n.startsWith('feedback-'));
 const bonuses = [
-  { image: 'b1', title: 'Método Práctico de Iniciación', subtitle: 'Material visual y animado para la introducción', points: ['Presenta el instrumento, la postura, la respiración y la emisión del sonido', 'Trabaja notas medias, graves y agudas de forma progresiva', 'Incluye ejercicios, melodías, dinámica y articulación', 'Trae escalas, arpegios, tabla de posiciones y actividades creativas'], price: '7' },
-  { image: 'b2', title: 'Guía Visual de Digitaciones', subtitle: 'Las posiciones de las notas en una consulta rápida', points: ['Muestra las posiciones de las notas en la flauta germana', 'Incluye también las digitaciones de la flauta barroca', 'Reúne notas naturales y alteradas en tablas visuales', 'Facilita la consulta de las posiciones durante cada práctica'], price: '7' },
+  { image: 'b1', title: 'Método Práctico de Iniciación', subtitle: 'Material visual y animado para la introducción', points: ['Presenta el instrumento, la postura, la respiración y la emisión del sonido', 'Trabaja notas medias, graves y agudas de forma progresiva', 'Incluye ejercicios, melodías, dinámica y articulación', 'Incluye escalas, arpegios, tabla de posiciones y actividades creativas'], price: '7' },
+  { image: 'b2', title: 'Guía Visual de Digitaciones', subtitle: 'Las posiciones de las notas en una consulta rápida', points: ['Muestra las posiciones de las notas en la flauta alemana', 'Incluye también las digitaciones de la flauta barroca', 'Reúne notas naturales y alteradas en tablas visuales', 'Facilita la consulta de las posiciones durante cada práctica'], price: '7' },
   { image: 'b3', title: 'Lectura de Partituras', subtitle: '30 páginas para entender el lenguaje musical', points: ['Explica pentagrama, figuras, compases, silencios y signos de repetición', 'Presenta notas, duraciones, ligaduras y signos de alteración', 'Trabaja digitación, articulación, cifrado y compás compuesto', 'Incluye propuestas de creación e improvisación musical'], price: '7' },
 ];
 const faqs = [
-  ['¿Cómo voy a recibir el material?', 'Después de confirmar la compra, recibes el acceso a los archivos digitales por correo electrónico. El acceso es inmediato.'],
-  ['¿Qué incluye el plan básico?', 'El plan básico incluye el PDF principal con 203 páginas y 100 cantigas infantiles para flauta dulce, cifras melódicas, dibujos de las digitaciones y partituras a color y en blanco y negro.'],
-  ['¿Qué trae el plan completo?', 'Recibes todo el material principal y los 3 bonos: Método Práctico de Iniciación, Guía Visual de Digitaciones y Lectura de Partituras.'],
-  ['¿El niño necesita saber leer partituras para usarlo?', 'No. El niño puede empezar por las cifras melódicas, que muestran los nombres de las notas, y por los dibujos de las digitaciones. Las partituras ayudan a desarrollar la lectura musical poco a poco.'],
-  ['¿Sirve para quien nunca tocó la flauta dulce?', 'Sí. El material fue pensado para la iniciación. En el plan completo, el Método Práctico de Iniciación también presenta el instrumento, la postura, la respiración y los primeros ejercicios.'],
-  ['¿Qué canciones forman parte del material?', 'Son 100 cantigas infantiles conocidas, como A Canoa Virou, Atirei o Pau no Gato, Brilha Brilha Estrelinha, Ciranda Cirandinha, Marcha Soldado, O Cravo e a Rosa y Sapo Cururu, entre otras.'],
-  ['¿Necesito alguna aplicación para usarlo?', 'Solo necesitas un lector de PDF, disponible en celulares, tablets y computadoras. También puedes imprimir el material para practicar sin usar una pantalla.'],
-  ['¿Este material sirve para casa y para clase?', 'Sí. Es un apoyo para familias, profesores, educadores e instructores que quieren presentar la flauta dulce de una forma visual y práctica.'],
-  ['¿Para qué edad suele funcionar mejor el material?', 'El material está indicado para la fase de iniciación musical. El aprovechamiento varía según el interés del niño, su coordinación y el acompañamiento de un adulto o profesor.'],
-  ['¿Puedo imprimir cuantas veces quiera?', 'Sí. Puedes imprimir las páginas según la necesidad de aprendizaje y práctica.'],
-  ['¿Existe garantía?', 'Sí. Tienes 7 días después de la compra para probar el material. Si no es lo que necesitas, solo tienes que solicitar el reembolso dentro de ese plazo.'],
-  ['¿El acceso es por tiempo limitado?', 'No. El acceso al material es de por vida. Después de descargar los PDFs, puedes consultar y practicar a tu ritmo.'],
+  ['¿Cómo voy a recibir el material?', 'Apenas se confirme tu pago, recibes un email con el acceso. Puedes descargar los PDFs al momento.'],
+  ['¿Qué trae el plan completo?', 'El PDF con las 100 canciones (203 páginas, a color y en blanco y negro) y 3 bonos: Método Práctico de Iniciación, Guía Visual de Digitaciones y Lectura de Partituras.'],
+  ['¿Tu hijo necesita saber leer partituras para usarlo?', 'No. Cada canción trae el nombre de las notas y dibujos de qué agujeros tapar. La partitura también está incluida para que aprenda a leerla poco a poco.'],
+  ['¿Sirve para quien nunca tocó la flauta dulce?', 'Sí. Está pensado para principiantes. El Bono 1 enseña desde cómo sostener la flauta y sacar el primer sonido.'],
+  ['¿Qué canciones forman parte del material?', 'Canciones infantiles tradicionales y conocidas, ordenadas de las más fáciles a las más desafiantes.'],
+  ['¿Necesito alguna aplicación para usarlo?', 'No. Solo necesitas abrir un PDF en el celular, la tablet o la computadora, o imprimirlo.'],
+  ['¿Este material sirve para casa y para clase?', 'Sí. Lo usan tanto familias como profesores de música y educadores.'],
+  ['¿Para qué edad suele funcionar mejor el material?', 'Funciona mejor a partir de los 6 años, pero cualquier persona que esté empezando puede usarlo.'],
+  ['¿Puedo imprimir cuantas veces quiera?', 'Sí, puedes imprimirlo cuantas veces quieras para uso personal o en tus clases.'],
+  ['¿Existe garantía?', 'Sí, 7 días. Si no te gusta, te devolvemos el 100% de tu dinero.'],
+  ['¿El acceso es por tiempo limitado?', 'No. Los PDFs son tuyos para siempre.'],
 ];
 
 function CTA({ children = 'QUIERO LAS 100 CANCIONES' }: { children?: ReactNode }) {
